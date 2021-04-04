@@ -1,0 +1,12 @@
+// Main Colors
+$primary_color: #24292c;
+// 24292c
+
+
+// Text Colors
+$primary_text_color: darken($primary_color, 10%);
+$secondary_text_color: rgb(230, 230, 230);
+
+// Border Colors
+$darken_color: transparentize($primary_color, .9);
+$lighten_color: transparentize($secondary_text_color, .5);

@@ -1,0 +1,38 @@
+/*========================================================
+        Begin:For Persian
+=========================================================*/
+@font-face {
+  font-family: sans-normal;
+  src: url('~assets/fonts/IRANSansMobile.ttf');
+}
+@font-face {
+  font-family: sans-bold;
+  src: url('~assets/fonts/IRANSansMobile_Bold.ttf');
+}
+@font-face {
+  font-family: sans-light;
+  src: url('~assets/fonts/IRANSansMobile_Light.ttf');
+}
+@font-face {
+  font-family: sans-ultra-light;
+  src: url('~assets/fonts/IRANSansMobile_UltraLight.ttf');
+}
+@font-face {
+  font-family: sans-medium;
+  src: url('~assets/fonts/IRANSansMobile_Medium.ttf');
+}
+/*========================================================
+        End:For Persian
+=========================================================*/
+
+div, p, a, li, pre, td, del {
+  font-family: sans-light;
+}
+
+h1, h2 {
+  font-family: sans-extrabold;
+}
+
+h3, h4, h5, h6, b, strong {
+  font-family: sans-semibold;
+}
