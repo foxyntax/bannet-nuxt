@@ -1,0 +1,7 @@
+body {
+    background-color: $empty_zone;
+}
+#pwa {
+    @apply w-full xl:w-1/4 mx-auto bg-white;
+    min-height: 100vh;
+}
