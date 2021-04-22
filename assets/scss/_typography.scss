@@ -25,6 +25,10 @@
         End:For Persian
 =========================================================*/
 
+* {
+  direction: rtl;
+}
+
 div, p, a, li, pre, td, del {
   font-family: sans-light;
 }
