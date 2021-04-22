@@ -6,4 +6,10 @@ export const state = () => ({
     expired_at: null,
 
     // From Membership
+    userMembership: {
+        title: null,
+        days: null,
+        status: null,
+        meta: null
+    }
 })
