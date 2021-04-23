@@ -1,5 +1,5 @@
 export const state = () => ({
-    pendingBalanc: 0,
+    pendingBalance: 0,
     availableBalance: 0,
     withdrawalBalance: 0,
     transactions: null,
