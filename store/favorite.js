@@ -5,7 +5,7 @@ export const state = () => ({
      * name
      * design_name
      * brand
-     * diameter\
+     * diameter
      ** and etc.
      */
 })

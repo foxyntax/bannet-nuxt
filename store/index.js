@@ -1,45 +1,54 @@
 export const mutations = {
-	// GLobal
-	UPDATE_USER_ACTIVE (state, payload) {
+	// USER
+	UPDATE_USER (state, payload) {
 		state.user[payload.index] = payload.value
 	},
-	UPDATE_THEME_COLOR (state, val) {
-		state.theme = val
+	UPDATE_USER_PERSONAL (state, payload) {
+		state.user.personal[payload.index] = payload.value
 	},
-	UPDATE_SETTINGS (state, payload) {
-		state.settings[payload.index] = payload.value
+	UPDATE_USER_FINANCIAL (state, payload) {
+		state.user.financial[payload.index] = payload.value
 	},
-	UPDATE_CLOSE_DAYS (state, payload) {
-		state.settings.close_day[payload.index] = payload.value
+	UPDATE_USER_FINANCIAL_DEBIT_CARD (state, payload) {
+		state.user.financial.debitCard[payload.index] = payload.value
 	},
-	UPDATE_LOAD_MODE (state, val) {
-		state.isLoading = val
+	UPDATE_USER_FINANCIAL_NATIONAL_ID (state, payload) {
+		state.user.financial.nationalId[payload.index] = payload.value
+	},
+	UPDATE_USER_FINANCIAL_LICENSE_CARD (state, payload) {
+		state.user.financial.licenseCard[payload.index] = payload.value
+	},
+	ADD_USER_SCORE (state, payload) {
+		state.user.score.push(payload)
+	},
+
+	// Wallet
+	UPDATE_WALLET (state, payload) {
+		state.wallet[payload.index] = payload.value
+	},
+	UPDATE_WALLET_MEMBERSHIP (state, payload) {
+		state.wallet.userMembership[payload.index] = payload.value
 	},
 
 	// Data
-	SET_DATA (state, payload) {
-		state.data[payload.index] = payload.value
+	UPDATE_CONTRACT (state, payload) {
+		state.contract.list = payload
+	},
+	UPDATE_FAVORITE (state, payload) {
+		state.favorite.list = payload
+	},
+	UPDATE_RECEIPT (state, payload) {
+		state.receipt.list = payload
 	},
 
-	// Order
-	SET_ORDER_VAR (state, payload) {
-		state.order[payload.index] = payload.value
-	},
-	SET_NEW_ORDER (state, payload) {
-		state.order.newOrder[payload.index] = payload.value
-	},
-	SET_ADDR_ORDER (state, payload) {
-		state.order.newOrder.address[payload.index] = payload.value
-	},
-
-	// Service
-	SET_SERVICE_DAY (state, payload) {
-		state.data.serviceDay[payload.index] = payload.value
+	// Layout
+	UPDATE_LOAD_MODE (state, val) {
+		state.layout.isLoading = val
 	},
 
 	// Tables
 	SET_TABLE (state, payload) {
-		state.data[payload.table] = payload.value
+		state.tables[payload.table] = payload.value
 	},
 	UPDATE_TABLE (state, payload) {
 		state.tables[payload.table].find(item => item.id === payload.id)[payload.property] = payload.value
