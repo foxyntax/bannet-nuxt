@@ -1,13 +1,34 @@
 // Main Colors
-$primary_color: #24292c;
-$empty_zone: #24292c;
-// 24292c
+$primary_color: #2898fc;
+$primary_darken_color: darken($primary_color, .9);
+$primary_lighten_color: lighten($primary_color, .5);
 
+$empty_zone: #24292c;
+
+// Background Colors
+$gray_background_color: #f5f5f5;
 
 // Text Colors
-$primary_text_color: darken($primary_color, 10%);
-$secondary_text_color: rgb(230, 230, 230);
+$primary_text_color: #2f3436;
 
-// Border Colors
-$darken_color: transparentize($primary_color, .9);
-$lighten_color: transparentize($secondary_text_color, .5);
+
+
+.text-primary {
+    color: $primary_color;
+}
+.text-primary-darken {
+    color: $primary_darken_color;
+}
+.text-primary-lighten {
+    color: $primary_lighten_color;
+}
+.text-default {
+    color: $primary_text_color;
+}
+
+.bg-gray {
+    background: $gray_background_color;
+}
+.bg-primary {
+    background: $primary_color;
+}

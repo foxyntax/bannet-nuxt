@@ -2,24 +2,16 @@
         Begin:For Persian
 =========================================================*/
 @font-face {
-  font-family: sans-normal;
-  src: url('~assets/fonts/IRANSansMobile.ttf');
-}
-@font-face {
   font-family: sans-bold;
-  src: url('~assets/fonts/IRANSansMobile_Bold.ttf');
+  src: url('~assets/fonts/IRANSansMobile_Bold.ttf'),
+       url('~assets/fonts/IRANSansMobile_Bold.eot'),
+       url('~assets/fonts/IRANSansMobile_Bold.woff');
 }
 @font-face {
   font-family: sans-light;
-  src: url('~assets/fonts/IRANSansMobile_Light.ttf');
-}
-@font-face {
-  font-family: sans-ultra-light;
-  src: url('~assets/fonts/IRANSansMobile_UltraLight.ttf');
-}
-@font-face {
-  font-family: sans-medium;
-  src: url('~assets/fonts/IRANSansMobile_Medium.ttf');
+  src: url('~assets/fonts/IRANSansMobile_Light.ttf'),
+       url('~assets/fonts/IRANSansMobile_Light.eot'),
+       url('~assets/fonts/IRANSansMobile_Light.woff');
 }
 /*========================================================
         End:For Persian
@@ -29,14 +21,26 @@
   direction: rtl;
 }
 
-div, p, a, li, pre, td, del {
-  font-family: sans-light;
+b, strong {
+  font-family: sans-bold;
 }
 
 h1, h2 {
-  font-family: sans-extrabold;
+  font-family: sans-bold;
+  font-weight: 800;
 }
 
-h3, h4, h5, h6, b, strong {
-  font-family: sans-semibold;
+h3, h4, h5, h6 {
+  font-family: sans-light;
+  font-weight: 600;
+}
+
+html, body, head, div, p, a, li, pre, td, del, input, ol, ul, button {
+  font-family: sans-light;
+  font-weight: 200;
+}
+
+.text-thin {
+  font-family: sans-light !important;
+  font-weight: 100 !important;
 }
