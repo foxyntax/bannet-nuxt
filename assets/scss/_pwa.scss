@@ -1,7 +1,11 @@
 body {
     background-color: $empty_zone;
 }
+#pwa, .fixed {
+    @apply w-full xl:w-1/4 mx-auto;
+    
+}
 #pwa {
-    @apply w-full xl:w-1/4 mx-auto bg-white;
+    @apply bg-white;
     min-height: 100vh;
 }
