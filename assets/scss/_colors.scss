@@ -1,34 +1,35 @@
 // Main Colors
-$primary_color: #2898fc;
-$primary_darken_color: darken($primary_color, .9);
-$primary_lighten_color: lighten($primary_color, .5);
-
+$primary_color: #62b5fb;
+$danger_color: #f82d71;
+$default_color: #2f3436;
+$gray_color: #f5f5f5;
 $empty_zone: #24292c;
 
 // Background Colors
-$gray_background_color: #f5f5f5;
-
-// Text Colors
-$primary_text_color: #2f3436;
-
 
 
 .text-primary {
     color: $primary_color;
 }
 .text-primary-darken {
-    color: $primary_darken_color;
+    color: darken($primary_color, 35%);
 }
 .text-primary-lighten {
-    color: $primary_lighten_color;
+    color: lighten($primary_color, 35%);
 }
 .text-default {
-    color: $primary_text_color;
+    color: $default_color;
+}
+.text-default-lighten {
+    color: lighten($default_color, 35%);
 }
 
 .bg-gray {
-    background: $gray_background_color;
+    background: $gray_color;
 }
 .bg-primary {
     background: $primary_color;
+}
+.bg-danger {
+    background: $danger_color;
 }

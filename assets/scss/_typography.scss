@@ -13,9 +13,6 @@
        url('~assets/fonts/IRANSansMobile_Light.eot'),
        url('~assets/fonts/IRANSansMobile_Light.woff');
 }
-/*========================================================
-        End:For Persian
-=========================================================*/
 
 * {
   direction: rtl;
@@ -37,10 +34,19 @@ h3, h4, h5, h6 {
 
 html, body, head, div, p, a, li, pre, td, del, input, ol, ul, button {
   font-family: sans-light;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .text-thin {
   font-family: sans-light !important;
   font-weight: 100 !important;
+}
+
+/*========================================================
+        End:For Persian
+=========================================================*/
+
+.en {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  font-weight: 200;
 }
