@@ -1,0 +1,39 @@
+$border_size: 1px;
+
+.input-text-area {
+    @apply relative;
+
+    label {
+        @apply block text-ultra-thin mb-2 px-4;
+        color: lighten($default_color, 40%);
+    }
+
+    input {
+        @apply relative pb-2 pt-3 px-4 rounded-tl-lg rounded-tr-lg;
+        border: $border_size solid lighten($default_color, 70%);
+        color: lighten($default_color, 35%);
+        width: inherit;
+        outline: none;
+    }
+    
+    input:hover + .input-border, .input-border-active {
+        @apply w-full #{!important};
+    }
+
+    .input-border {
+        @apply w-0 block absolute left-0 right-0 mx-auto z-10;
+        height: $border_size + 1;
+        transition: all .25s ease-out;
+    }
+
+    .input-border-warning {
+        @apply w-full bg-danger text-white text-xs pt-5 #{!important};
+        height: 42px !important;
+    }
+
+    
+}
+
+
+
+
