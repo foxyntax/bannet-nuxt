@@ -13,6 +13,10 @@
        url('~assets/fonts/IRANSansMobile_Light.eot'),
        url('~assets/fonts/IRANSansMobile_Light.woff');
 }
+@font-face {
+  font-family: sans-ulrtalight;
+  src: url('~assets/fonts/IRANSans_Light.ttf');
+}
 
 * {
   direction: rtl;
@@ -40,6 +44,9 @@ html, body, head, div, p, a, li, pre, td, del, input, ol, ul, button {
 .text-thin {
   font-family: sans-light !important;
   font-weight: 100 !important;
+}
+.text-ultra-thin {
+  font-family: sans-ulrtalight !important;
 }
 
 /*========================================================
