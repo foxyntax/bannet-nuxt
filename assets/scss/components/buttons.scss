@@ -17,7 +17,7 @@
 }
 
 .bannet-btn {
-  @apply rounded-md text-center outline-none border-none text-white py-3 px-5;
+  @apply rounded-md text-center outline-none border-none text-white pt-3 pb-2 px-5;
   width: inherit;
 
   &:focus, &:hover, &:active {

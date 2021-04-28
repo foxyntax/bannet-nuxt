@@ -4,7 +4,7 @@ $border_size: 1px;
     @apply relative;
 
     label {
-        @apply block text-ultra-thin mb-2 px-4;
+        @apply block mb-2 px-4;
         color: lighten($default_color, 40%);
     }
 
