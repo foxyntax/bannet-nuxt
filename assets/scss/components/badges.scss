@@ -1,0 +1,30 @@
+.badge {
+    width: inherit;
+    @apply text-sm rounded-lg py-1 px-3;
+
+    i {
+        @apply relative px-0;
+        top: 1.5px;
+    }
+}
+
+.badge-small {
+    @apply text-xs #{!important};
+}
+
+.badge-big {
+    @apply text-lg #{!important};
+}
+
+.badge-primary {
+    background: transparentize($primary_color, 0.9);
+    color: lighten($primary_color, 10%);
+}
+.badge-danger {
+    background: transparentize($danger_color, 0.5);
+    color: lighten($danger_color, 10%);
+}
+.badge-default {
+    background: transparentize($default_color, 0.5);
+    color: lighten($default_color, 10%);
+}
