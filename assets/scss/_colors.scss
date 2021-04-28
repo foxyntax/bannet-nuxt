@@ -20,6 +20,9 @@ $empty_zone: #24292c;
 .text-default-lighten {
     color: lighten($default_color, 35%);
 }
+.text-default-ultraLighten {
+    color: lighten($default_color, 55%);
+}
 
 .bg-gray {
     background: $gray_color;
