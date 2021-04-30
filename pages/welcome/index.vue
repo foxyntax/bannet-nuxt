@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Header -->
-    <section class="px-4 md:px-6 mb-12">
+    <section class="px-4 mb-4 xs:mb-16">
       <NuxtLink to="/store" class="w-full block text-left mb-5 md:mb-28 py-6">
         <i class="fad fa-arrow-left text-primary text-2xl"/>
       </NuxtLink>
@@ -33,11 +33,11 @@
       </div>
     </section>
     <!-- After Sending a Token -->
-    <section class="px-4 md:px-6" v-else>
+    <section class="px-4 xs:px-6 md:px-10" v-else>
       <p class="text-xl text-default-lighten sans-medium text-center mb-2">کد ارسالی را وارد کنید.</p>
       <p class="text-xs text-default-ultraLighten text-center mb-3">کد 5 رقمی به شماره شما پیامک شد.</p>
       <Badge text="09156284764" class="max-w-max text-center cursor-pointer mx-auto mb-6" icon="far fa-pen-alt" @click="startAgain"/>
-      <div class="flex justify-between mb-4 px-5">
+      <div class="flex justify-center sm:justify-center mb-4 px-5">
           <div class="input-text-area mx-1 user-token">
             <input
               id="tap-4"
@@ -108,7 +108,7 @@
             <span class="input-border bg-primary"></span>
           </div>
       </div>
-      <div class="flex justify-between px-5">
+      <div class="flex justify-between px-7 xs:px-5 sm:px-48 lg:px-80">
         <p class="text-default-ultraLighten text-xs">پیامکی دریافت نکرده اید؟</p>
         <p class="text-primary text-pointer text-xs sans-medium">ارسال مجدد پیامک</p>
       </div>
