@@ -6,7 +6,7 @@
 export default {
   data: () => ({}),
   head: () => ({
-    title: 'Bannet | Dashboard',
+    title: 'بنت | محصولات',
     meta: [
       // SEO Examples
       { hid: 'description', name: 'description', content: 'Gemnote VueJS Frontend Assessment' },
@@ -24,7 +24,7 @@ export default {
       { name: 'twitter:site', content: '@website-username' },
       { name: 'fb:app_id', content: 'your_app_id' }
     ]
-  })
+  }),
 }
 </script>
 
