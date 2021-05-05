@@ -108,7 +108,7 @@
             <span class="input-border bg-primary"></span>
           </div>
       </div>
-      <div class="flex justify-between px-7 xs:px-5 sm:px-48 lg:px-80">
+      <div class="flex justify-between px-7 xs:px-5 sm:px-48 lg:px-16">
         <p class="text-default-ultraLighten text-xs">پیامکی دریافت نکرده اید؟</p>
         <p class="text-primary text-pointer text-xs sans-medium">ارسال مجدد پیامک</p>
       </div>
