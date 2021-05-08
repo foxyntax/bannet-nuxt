@@ -21,24 +21,12 @@ $border_size: 1px;
         -o-transition: all .23s ease-out;
         
         &:hover, &:valid {
-            border-bottom-left-radius: 0px;
-            border-bottom-right-radius: 0px;
+            border: $border_size solid $primary_color;
+            box-shadow: -1px -2px 10px 2px whitesmoke,
+                        1px -2px 10px 2px whitesmoke,
+                        0 1px 6px 1px lighten($primary_color, 20%),
+                        0 15px 19px 0 lighten($primary_color, 35%);
         }
-    }
-    
-    input:hover + .input-border, input:valid + .input-border, .input-border-active {
-        @apply w-full #{!important};
-    }
-
-    .input-border {
-        @apply w-0 block absolute left-0 right-0 mx-auto z-10;
-        height: $border_size + 1;
-        transition: all .25s ease-out;
-    }
-
-    .input-border-warning {
-        @apply w-full bg-danger text-white text-xs pt-5 #{!important};
-        height: 42px !important;
     }
 
     

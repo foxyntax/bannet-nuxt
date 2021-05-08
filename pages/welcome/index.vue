@@ -23,7 +23,6 @@
           v-model="tell"
           required
         >
-        <span class="input-border bg-primary" :class="{'input-border-warning': (validationWarning !== '')}">{{ validationWarning }}</span>
       </div>
       <div class="w-full fixed text-center py-5 px-4 md:px-6 left-0 bottom-0 right-0">
         <a class="block text-default-lighten text-sm mb-5" href="https://bannet.com/roles/" target="self">مطالعه قوانین و مقررات بنت</a>
@@ -37,7 +36,7 @@
       <p class="text-xl text-default-lighten sans-medium text-center mb-2">کد ارسالی را وارد کنید.</p>
       <p class="text-xs text-default-ultraLighten text-center mb-3">کد 5 رقمی به شماره شما پیامک شد.</p>
       <Badge text="09156284764" class="max-w-max text-center cursor-pointer mx-auto mb-6" icon="far fa-pen-alt" @click="startAgain"/>
-      <div class="flex justify-center sm:justify-center mb-4 px-5">
+      <div class="flex justify-center sm:justify-center mb-6 px-5">
           <div class="input-text-area mx-1 user-token">
             <input
               id="tap-4"
@@ -49,7 +48,6 @@
               tabindex="5"
               required
             >
-            <span class="input-border bg-primary"></span>
           </div>
           <div class="input-text-area mx-1 user-token">
             <input
@@ -63,7 +61,6 @@
               required
               @keyup="autoNextInput('tap-', 3)"
             >
-            <span class="input-border bg-primary"></span>
           </div>
           <div class="input-text-area mx-1 user-token">
             <input
@@ -77,7 +74,6 @@
               required
               @keyup="autoNextInput('tap-', 2)"
             >
-            <span class="input-border bg-primary"></span>
           </div>
           <div class="input-text-area mx-1 user-token">
             <input
@@ -91,7 +87,6 @@
               required
               @keyup="autoNextInput('tap-', 1)"
             >
-            <span class="input-border bg-primary"></span>
           </div>
           <div class="input-text-area mx-1 user-token">
             <input
@@ -105,12 +100,11 @@
               required
               @keyup="autoNextInput('tap-', 0)"
             >
-            <span class="input-border bg-primary"></span>
           </div>
       </div>
       <div class="flex justify-between px-7 xs:px-5 sm:px-48 lg:px-16">
         <p class="text-default-ultraLighten text-xs">پیامکی دریافت نکرده اید؟</p>
-        <p class="text-primary text-pointer text-xs sans-medium">ارسال مجدد پیامک</p>
+        <p class="text-primary text-pointer text-xs sans-medium cursor-pointer">ارسال مجدد پیامک</p>
       </div>
       <div class="w-full fixed text-center py-5 px-4 md:px-6 left-0 bottom-0 right-0">
         <div class="block w-full">
@@ -128,7 +122,6 @@ export default {
     tell: '',
     token: '',
     userToken: [],
-    validationWarning: '',
     waitingForToken: false
   }),
   head: () => ({
