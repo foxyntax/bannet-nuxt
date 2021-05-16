@@ -1,19 +1,25 @@
 <template>
   <div id="logged-container">
-    <section id="header"></section>
     <Nuxt />
-    <section id="footer">
-      <div class="p-3">
-        <div class="h-9 xs:h-12 grid grid-cols-5 grid-rows-1 gap-1">
-          <div class="text-center col-span-2">
-            <Badge text="خودرو سواری" id="category" icon="fal fa-car text-xl xs:text-3xl" iconPosition="before"/>
-          </div>
-          <div class="text-center foot-icons"><i class="fal fa-sliders-h text-xl xs:text-3xl" /></div>
-          <div class="text-center foot-icons"><i class="fal fa-tire text-xl xs:text-3xl" /></div>
-          <div class="text-center foot-icons"><i class="fal fa-user text-xl xs:text-3xl" /></div>
+    <footer>
+      <div class="grid grid-cols-5 grid-rows-1 gap-1 px-2 py-2">
+        <div class="text-center col-span-2">
+          <Badge id="category" text="خودرو سواری" icon="fal fa-car text-xl xs:text-2xl" icon-position="before" />
         </div>
+
+        <NuxtLink to="" class="text-center foot-icons">
+          <i class="fal fa-sliders-h text-xl xs:text-2xl" />
+        </NuxtLink>
+
+        <NuxtLink to="" class="text-center foot-icons">
+          <i class="fal fa-tire text-xl xs:text-2xl" />
+        </NuxtLink>
+
+        <NuxtLink to="" class="text-center foot-icons">
+          <i class="fal fa-user text-xl xs:text-2xl" />
+        </NuxtLink>
       </div>
-    </section>
+    </footer>
   </div>
 </template>
 
@@ -42,25 +48,3 @@ export default {
   })
 }
 </script>
-
-<style lang="scss">
-#footer {
-  @apply fixed w-full left-0 bottom-0 right-0;
-  border-top: 1px solid lighten($default_color, 70%);
-
-  #category {
-    @apply text-center cursor-pointer py-2 text-xs xs:text-sm #{!important};
-
-    span {
-      @apply relative;
-      top: -5px;
-    }
-  }
-
-  .foot-icons {
-    @apply relative text-default-lighten cursor-pointer;
-    top: 7px;
-  }
-}
-
-</style>
