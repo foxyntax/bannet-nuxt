@@ -1,0 +1,11 @@
+.box-shadow {
+    box-shadow: 0 -1px 12px 0 lighten($default_color, 68%);
+}
+
+.primary-shadow {
+    @apply box-shadow;
+
+    &:hover {
+        box-shadow: 0 -1px 12px 0 lighten($primary_color, 45%);
+    }
+}

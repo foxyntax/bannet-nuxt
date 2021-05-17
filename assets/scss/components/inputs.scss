@@ -1,24 +1,28 @@
 $border_size: 1px;
 
+.defaul-input-config {
+    @apply relative rounded-lg;
+    width: inherit;
+    outline: none;
+    border: $border_size solid lighten($default_color, 70%);
+    color: lighten($default_color, 35%);
+    transition: all .23s ease-out;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .23s ease-out;
+    -ms-transition: all .23s ease-out;
+    -o-transition: all .23s ease-out;
+}
+
 .input-text-area {
     @apply relative;
 
-    label {
+    > label {
         @apply block mb-2 px-4;
         color: lighten($default_color, 40%);
     }
 
-    input {
-        @apply relative pb-2 pt-3 px-2 rounded-lg;
-        width: inherit;
-        outline: none;
-        border: $border_size solid lighten($default_color, 70%);
-        color: lighten($default_color, 35%);
-        transition: all .23s ease-out;
-        -webkit-transition: all .2s ease-out;
-        -moz-transition: all .23s ease-out;
-        -ms-transition: all .23s ease-out;
-        -o-transition: all .23s ease-out;
+    > input {
+        @apply defaul-input-config pb-2 pt-3 px-2;
         
         &:hover, &:valid {
             border: $border_size solid $primary_color;
@@ -30,6 +34,26 @@ $border_size: 1px;
     }
 
     
+}
+
+.default-text-input {
+    @apply defaul-input-config py-3;
+    width: inherit;
+    outline: none;
+
+    &:hover {
+        border: $border_size solid $primary_color;
+    }
+
+    + label {
+        @apply absolute;
+        top: 28px;
+        right: 23px;
+    }
+
+    &:hover + label,  &:hover + label > * {
+        color: $primary_color;
+    }
 }
 
 

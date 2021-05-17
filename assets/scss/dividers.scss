@@ -1,0 +1,8 @@
+$divider_size: 10px;
+
+.divider-b {
+    border-bottom: $divider_size solid lighten(black, 96%);
+}
+.divider-t {
+    border-top: $divider_size solid lighten(black, 96%);
+}
