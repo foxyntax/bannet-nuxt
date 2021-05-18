@@ -1,7 +1,7 @@
 export default {
 	computed: {
         wallet () {
-            return this.store.state.wallet
+            return this.$store.state.wallet
         },
         membership () {
             return this.wallet.userMembership
@@ -11,7 +11,7 @@ export default {
                 return this.wallet.pendingBalance
             },
             set (val) {
-                this.$store.commit('UPDATE_WALLET', {index: 'pendingBalance', value: val})
+                this.$store.commit('UPDATE_WALLET', { index: 'pendingBalance', value: val })
             }
         },
         availableBalance: {
@@ -19,7 +19,7 @@ export default {
                 return this.wallet.availableBalance
             },
             set (val) {
-                this.$store.commit('UPDATE_WALLET', {index: 'availableBalance', value: val})
+                this.$store.commit('UPDATE_WALLET', { index: 'availableBalance', value: val })
             }
         },
         withdrawalBalance: {
@@ -27,7 +27,7 @@ export default {
                 return this.wallet.withdrawalBalance
             },
             set (val) {
-                this.$store.commit('UPDATE_WALLET', {index: 'withdrawalBalance', value: val})
+                this.$store.commit('UPDATE_WALLET', { index: 'withdrawalBalance', value: val })
             }
         },
         transactions: {
@@ -35,7 +35,7 @@ export default {
                 return this.wallet.transactions
             },
             set (val) {
-                this.$store.commit('UPDATE_WALLET', {index: 'transactions', value: val})
+                this.$store.commit('UPDATE_WALLET', { index: 'transactions', value: val })
             }
         },
         expired_at: {
@@ -43,7 +43,7 @@ export default {
                 return this.wallet.expired_at
             },
             set (val) {
-                this.$store.commit('UPDATE_WALLET', {index: 'expired_at', value: val})
+                this.$store.commit('UPDATE_WALLET', { index: 'expired_at', value: val })
             }
         },
         membershipTitle: {
@@ -51,7 +51,7 @@ export default {
                 return this.membership.title
             },
             set (val) {
-                this.$store.commit('UPDATE_WALLET_MEMBERSHIP', {index: 'title', value: val})
+                this.$store.commit('UPDATE_WALLET_MEMBERSHIP', { index: 'title', value: val })
             }
         },
         membershipDays: {
@@ -59,7 +59,7 @@ export default {
                 return this.membership.days
             },
             set (val) {
-                this.$store.commit('UPDATE_WALLET_MEMBERSHIP', {index: 'days', value: val})
+                this.$store.commit('UPDATE_WALLET_MEMBERSHIP', { index: 'days', value: val })
             }
         },
         membershipStatus: {
@@ -67,7 +67,7 @@ export default {
                 return this.membership.status
             },
             set (val) {
-                this.$store.commit('UPDATE_WALLET_MEMBERSHIP', {index: 'status', value: val})
+                this.$store.commit('UPDATE_WALLET_MEMBERSHIP', { index: 'status', value: val })
             }
         },
         membershipMeta: {
@@ -75,8 +75,8 @@ export default {
                 return this.membership.meta
             },
             set (val) {
-                this.$store.commit('UPDATE_WALLET_MEMBERSHIP', {index: 'meta', value: val})
+                this.$store.commit('UPDATE_WALLET_MEMBERSHIP', { index: 'meta', value: val })
             }
-        },
+        }
     }
 }

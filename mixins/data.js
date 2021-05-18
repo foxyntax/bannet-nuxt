@@ -2,7 +2,7 @@ export default {
 	computed: {
         contract: {
             get () {
-                return this.store.state.contract.list
+                return this.$store.state.contract.list
             },
             set (val) {
                 this.$store.commit('UPDATE_CONTRACT', val)
@@ -10,7 +10,7 @@ export default {
         },
         favorite: {
             get () {
-                return this.store.state.favorite.list
+                return this.$store.state.favorite.list
             },
             set (val) {
                 this.$store.commit('UPDATE_FAVORITE', val)
@@ -18,11 +18,11 @@ export default {
         },
         receipt: {
             get () {
-                return this.store.state.receipt.list
+                return this.$store.state.receipt.list
             },
             set (val) {
                 this.$store.commit('UPDATE_RECEIPT', val)
             }
-        },
+        }
     }
 }
