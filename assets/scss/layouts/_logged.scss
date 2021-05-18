@@ -1,0 +1,61 @@
+@keyframes ticker {
+  from {
+    @apply text-default-lighten;
+  }
+
+  to {
+    @apply text-primary;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+footer {
+    @apply fixed w-full bg-white box-shadow left-0 bottom-0 right-0;
+  
+    #category {
+      @apply text-center cursor-pointer py-2 text-xs xs:text-sm #{!important};
+  
+      span {
+        @apply relative;
+        top: -5px;
+      }
+    }
+  
+    .foot-icons {
+      @apply relative text-default-lighten cursor-pointer;
+  
+      > i {
+        @apply relative;
+        top: 10px;
+      }
+    }
+
+    .fa-tire:hover {
+      animation-name: rotate;
+      animation-duration: 1s;
+    }
+
+    .ticker {
+      animation-name: ticker;
+      animation-duration: 2s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+    }
+  }
