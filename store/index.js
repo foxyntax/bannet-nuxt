@@ -42,8 +42,8 @@ export const mutations = {
 	},
 
 	// Layout
-	UPDATE_LOAD_MODE (state, val) {
-		state.layout.isLoading = val
+	UPDATE_LAYOUT (state, payload) {
+		state.layout[payload.state] = payload.value
 	},
 
 	// Tables
