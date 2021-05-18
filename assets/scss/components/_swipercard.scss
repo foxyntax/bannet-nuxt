@@ -1,0 +1,16 @@
+.swiper-card {
+
+    @apply w-full rounded-t-2xl shadow-lg bg-white mx-auto bottom-0 z-50 fixed;
+    min-height: 150px;
+
+    .swip-action {
+        @apply w-full px-10 py-5 relative;
+
+        &::after {
+            @apply w-16 rounded-full bg-gray-300 shadow-sm h-1 inset-0 mx-auto absolute;
+            content: "";
+            top: 10px;
+            height: 5px;
+        }
+    }
+}
