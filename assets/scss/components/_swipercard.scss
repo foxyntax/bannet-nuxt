@@ -1,7 +1,7 @@
 .swiper-card {
 
-    @apply w-full rounded-t-2xl shadow-lg bg-white mx-auto bottom-0 z-50 fixed;
-    min-height: 150px;
+    @apply w-full shadow-lg bg-white mx-auto bottom-0 left-0 right-0 z-50 fixed;
+    min-height: 100vh;
 
     .swip-action {
         @apply w-full px-10 py-5 relative;

@@ -26,10 +26,10 @@ $border_size: 1px;
         
         &:hover, &:valid {
             border: $border_size solid $primary_color;
-            box-shadow: -1px -2px 10px 2px whitesmoke,
-                        1px -2px 10px 2px whitesmoke,
-                        0 1px 6px 1px lighten($primary_color, 20%),
-                        0 15px 19px 0 lighten($primary_color, 35%);
+            box-shadow: -1px -2px 5px 2px whitesmoke,
+                        1px -2px 5px 2px whitesmoke,
+                        0 1px 2px 0 lighten($primary_color, 20%),
+                        0 0 4px 0 lighten($primary_color, 35%);
         }
     }
 

@@ -17,8 +17,12 @@
 }
 
 button {
-  &:hover, &:focus, &:active {
+  &:hover, &:focus, &:active, &:disabled {
     outline: none;
+  }
+
+  &:disabled {
+    @apply bg-gray-300 #{!important};
   }
 }
 
