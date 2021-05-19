@@ -15,7 +15,8 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    indent: [1, 'space'],
+    indent: 'off',
+    // indent: [1, 'space'],
     'no-tabs': 0
   }
 }
