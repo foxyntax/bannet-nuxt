@@ -1,20 +1,11 @@
 <template>
     <p
-        class="badge sans-number"
-        :class="{
-            'badge-small'  : (type == 'small'),
-            'badge-big'    : (type == 'big'),
-            'badge-primary': (color == 'primary'),
-            'badge-default': (color == 'default'),
-            'badge-danger' : (color == 'danger'),
-            'badge-mini'   : (type == 'default'),
-            'sans-number'  : (faNumber),
-            classes
-        }"
+      class="badge sans-number"
+      :class="`${classes} ${getTypeClass} ${getColorClass} ${getFontStyle}`"
     >
-        <i v-show="iconPosition == 'before'" :class="icon" class="ml-1" />
-        <span> {{ text }} </span>
-        <i v-show="iconPosition == 'after'" :class="icon" class="mr-1" />
+      <i v-show="iconPosition == 'before'" :class="icon" class="ml-1" />
+      <span> {{ text }} </span>
+      <i v-show="iconPosition == 'after'" :class="icon" class="mr-1" />
     </p>
 </template>
 
@@ -54,6 +45,29 @@ export default {
       required: false,
       type: String,
       default: ''
+    }
+  },
+  computed: {
+    getTypeClass () {
+      if (this.type === 'big') {
+        return 'badge-big'
+      } else if (this.type === 'small') {
+        return 'badge-small'
+      } else {
+        return 'badge-mini'
+      }
+    },
+    getColorClass () {
+      if (this.color === 'default') {
+        return 'badge-default'
+      } else if (this.color === 'danger') {
+        return 'badge-danger'
+      } else {
+        return 'badge-primary'
+      }
+    },
+    getFontStyle () {
+      return (this.faNumber) ? 'sans-number' : null
     }
   }
 }
