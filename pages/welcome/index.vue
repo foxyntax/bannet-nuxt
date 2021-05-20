@@ -2,12 +2,16 @@
   <div>
     <!-- Header -->
     <section class="px-4 mb-4 xs:mb-16">
-      <NuxtLink to="/store" class="w-full block text-left mb-5 md:mb-28 py-6">
-        <i class="fad fa-arrow-left text-primary text-2xl"/>
+      <NuxtLink to="/" class="w-full block text-left mb-5 md:mb-28 py-6">
+        <i class="fas fa-arrow-left text-primary text-2xl" />
       </NuxtLink>
       <div class="w-full text-center">
-        <h2 class="text-5xl text-default-lighten mb-2 en">BANNET</h2>
-        <h1 class="text-lg text-primary sans-ultra-light">فروشـگاه هوشـمند بـَنِت</h1>
+        <h2 class="text-5xl text-default-lighten mb-2 en">
+          BANNET
+        </h2>
+        <h1 class="text-lg text-primary sans-ultra-light">
+          فروشـگاه هوشـمند بـَنِت
+        </h1>
       </div>
     </section>
     <!-- Before Sending a Token -->
@@ -15,100 +19,108 @@
       <div class="w-full input-text-area">
         <label for="tell">شماره موبایل:</label>
         <input
-          type="text"
           id="tell"
+          v-model="tell"
+          type="text"
           placeholder="●●●●●●●● 091"
           maxlength="11"
           class="text-center sans-number"
-          v-model="tell"
           required
         >
       </div>
       <div class="w-full fixed text-center py-5 px-4 md:px-6 left-0 bottom-0 right-0">
         <a class="block text-default-lighten text-sm mb-5" href="https://bannet.com/roles/" target="self">مطالعه قوانین و مقررات بنت</a>
         <div class="block w-full">
-          <Button text="دریافت کد" classes="bg-primary" :loading="waitingForToken"/>
+          <Button text="دریافت کد" classes="bg-primary" :loading="waitingForToken" />
         </div>
       </div>
     </section>
     <!-- After Sending a Token -->
-    <section class="px-4 xs:px-6 md:px-10" v-else>
-      <p class="text-xl text-default-lighten sans-medium text-center mb-2">کد ارسالی را وارد کنید.</p>
-      <p class="text-xs text-default-ultraLighten text-center mb-3">کد 5 رقمی به شماره شما پیامک شد.</p>
-      <Badge text="09156284764" class="max-w-max text-center cursor-pointer mx-auto mb-6" icon="far fa-pen-alt" @click="startAgain"/>
+    <section v-else class="px-4 xs:px-6 md:px-10">
+      <p class="text-xl text-default-lighten sans-medium text-center mb-2">
+        کد ارسالی را وارد کنید.
+      </p>
+      <p class="text-xs text-default-ultraLighten text-center mb-3">
+        کد 5 رقمی به شماره شما پیامک شد.
+      </p>
+      <Badge text="09156284764" class="max-w-max text-center cursor-pointer mx-auto mb-6" icon="far fa-pen-alt" @click="startAgain" />
       <div class="flex justify-center sm:justify-center mb-6 px-5">
-          <div class="input-text-area mx-1 user-token">
-            <input
-              id="tap-4"
-              type="text"
-              placeholder="_"
-              maxlength="1"
-              class="text-center sans-number text-xl"
-              v-model="userToken[4]"
-              tabindex="5"
-              required
-            >
-          </div>
-          <div class="input-text-area mx-1 user-token">
-            <input
-              id="tap-3"
-              type="text"
-              placeholder="_"
-              maxlength="1"
-              class="text-center sans-number text-xl"
-              v-model="userToken[3]"
-              tabindex="4"
-              required
-              @keyup="autoNextInput('tap-', 3)"
-            >
-          </div>
-          <div class="input-text-area mx-1 user-token">
-            <input
-              id="tap-2"
-              type="text"
-              placeholder="_"
-              maxlength="1"
-              class="text-center sans-number text-xl"
-              v-model="userToken[2]"
-              tabindex="3"
-              required
-              @keyup="autoNextInput('tap-', 2)"
-            >
-          </div>
-          <div class="input-text-area mx-1 user-token">
-            <input
-              id="tap-1"
-              type="text"
-              placeholder="_"
-              maxlength="1"
-              class="text-center sans-number text-xl"
-              v-model="userToken[1]"
-              tabindex="2"
-              required
-              @keyup="autoNextInput('tap-', 1)"
-            >
-          </div>
-          <div class="input-text-area mx-1 user-token">
-            <input
-              id="tap-0"
-              type="text"
-              placeholder="_"
-              maxlength="1"
-              class="text-center sans-number text-xl"
-              v-model="userToken[0]"
-              tabindex="11"
-              required
-              @keyup="autoNextInput('tap-', 0)"
-            >
-          </div>
+        <div class="input-text-area mx-1 user-token">
+          <input
+            id="tap-4"
+            v-model="userToken[4]"
+            type="text"
+            placeholder="_"
+            maxlength="1"
+            class="text-center sans-number text-xl"
+            tabindex="5"
+            required
+          >
+        </div>
+        <div class="input-text-area mx-1 user-token">
+          <input
+            id="tap-3"
+            v-model="userToken[3]"
+            type="text"
+            placeholder="_"
+            maxlength="1"
+            class="text-center sans-number text-xl"
+            tabindex="4"
+            required
+            @keyup="autoNextInput('tap-', 3)"
+          >
+        </div>
+        <div class="input-text-area mx-1 user-token">
+          <input
+            id="tap-2"
+            v-model="userToken[2]"
+            type="text"
+            placeholder="_"
+            maxlength="1"
+            class="text-center sans-number text-xl"
+            tabindex="3"
+            required
+            @keyup="autoNextInput('tap-', 2)"
+          >
+        </div>
+        <div class="input-text-area mx-1 user-token">
+          <input
+            id="tap-1"
+            v-model="userToken[1]"
+            type="text"
+            placeholder="_"
+            maxlength="1"
+            class="text-center sans-number text-xl"
+            tabindex="2"
+            required
+            @keyup="autoNextInput('tap-', 1)"
+          >
+        </div>
+        <div class="input-text-area mx-1 user-token">
+          <input
+            id="tap-0"
+            v-model="userToken[0]"
+            type="text"
+            placeholder="_"
+            maxlength="1"
+            class="text-center sans-number text-xl"
+            tabindex="11"
+            required
+            @keyup="autoNextInput('tap-', 0)"
+          >
+        </div>
       </div>
       <div class="flex justify-between px-7 xs:px-5 sm:px-48 lg:px-16">
-        <p class="text-default-ultraLighten text-xs">پیامکی دریافت نکرده اید؟</p>
-        <p class="text-primary text-pointer text-xs sans-medium cursor-pointer">ارسال مجدد پیامک</p>
+        <p class="text-default-ultraLighten text-xs">
+          پیامکی دریافت نکرده اید؟
+        </p>
+        <p class="text-primary text-pointer text-xs sans-medium cursor-pointer">
+          ارسال مجدد پیامک
+        </p>
       </div>
       <div class="w-full fixed text-center py-5 px-4 md:px-6 left-0 bottom-0 right-0">
         <div class="block w-full">
-          <Button text="ورود | ثبت نام" classes="bg-primary" :loading="waitingForToken"/>
+          <Button text="ورود | ثبت نام" classes="bg-primary" :loading="waitingForToken" />
         </div>
       </div>
     </section>
