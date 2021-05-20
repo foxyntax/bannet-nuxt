@@ -3,8 +3,8 @@
     <Nuxt />
     <footer>
       <div class="grid grid-cols-5 grid-rows-1 gap-1 px-2 py-2">
-        <div class="text-center col-span-2">
-          <Badge id="category" text="خودرو سواری" icon="fal fa-car text-xl xs:text-2xl" icon-position="before" />
+        <div class="text-center col-span-2" @click="catShow = true">
+          <Badge id="category" :text="catChosen.name" :icon="`${catChosen.icon} text-xl xs:text-2xl`" icon-position="before" />
         </div>
 
         <NuxtLink to="" class="text-center foot-icons">
@@ -15,16 +15,36 @@
           <i class="fal fa-tire text-xl xs:text-2xl" />
         </NuxtLink>
 
-        <NuxtLink to="" class="text-center foot-icons">
+        <NuxtLink v-if="id !== 0" to="/profile/:id" class="text-center foot-icons">
           <i class="fal fa-user text-xl xs:text-2xl" />
         </NuxtLink>
+
+        <NuxtLink v-else to="/welcome" class="text-center foot-icons">
+          <i class="fal fa-sign-in ticker text-xl xs:text-2xl" />
+        </NuxtLink>
+
+        <!-- Modals: [Categories, Filters, Region] -->
+        <SwiperCard v-model="catShow">
+          <Categories />
+        </SwiperCard>
+
+        <SwiperCard v-model="regShow">
+          <Cities />
+        </SwiperCard>
+
+        <SwiperCard v-model="regFilter">
+          <Filters />
+        </SwiperCard>
       </div>
     </footer>
   </div>
 </template>
 
 <script>
+import user from '@/mixins/user'
+import layout from '@/mixins/layout'
 export default {
+  mixins: [user, layout],
   data: () => ({}),
   head: () => ({
     title: 'بنت | محصولات',
