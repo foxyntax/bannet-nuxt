@@ -1,10 +1,70 @@
 <template>
-  <section></section>
+  <section id="store-container">
+    <header id="header" class="sticky top-0 flex flex-row justify-between items-center bg-white z-50 p-2 xs:p-3">
+      <NuxtLink v-if="id !== 0" to="/profile/:id">
+        <Avatar src="demo/avatar.jpg" alt="تصویر کاربر" class="inline-block" />
+      </NuxtLink>
+
+      <NuxtLink v-else tag="button" to="/welcome" class="sign">
+        ثبت‌نام / ورود
+      </NuxtLink>
+
+      <button class="region-selection" @click="regShow = true">
+        <i class="fal fa-map-marker-alt" />
+        <span class="text-default"> {{ regChosen }} </span>
+      </button>
+    </header>
+
+    <!-- Search and Titles -->
+    <section>
+      <div class="relative w-full mt-2 p-2 xs:p-3">
+        <input id="searchbox" type="text" placeholder="جست‌وجو تایر" class="default-text-input pl-2 pr-10">
+        <label for="searchbox" @click="searchTires">
+          <i class="far fa-search text-gray-400" />
+        </label>
+      </div>
+
+      <div class="flex flex-row justify-between divider-b mt-3 px-2 xs:px-3 pb-5">
+        <h1> {{ chosenCategory }} </h1>
+        <small class="sans-number text-gray-400"> {{ countTires | AddTextTire }} </small>
+      </div>
+    </section>
+
+    <article class="p-2 xs:p-3 mb-12">
+      <TireCard v-for="(item, index) in tireList" :key="index" :data="item" :index="index" />
+    </article>
+  </section>
 </template>
 
 <script>
+import user from '@/mixins/user'
+import layout from '@/mixins/layout'
 export default {
-  data: () => ({}),
+  filters: {
+    AddTextTire (val) {
+      return val + ' تایر'
+    }
+  },
+  mixins: [user, layout],
+  layout: 'store',
+  data: () => ({
+    chosenCategory: 'تایر خودرو سواری',
+    countTires: 538,
+    tireList: [
+      {
+        type: '',
+        features: { name: 'لاستیک خودرو تراینگل مدل TC101', design_name: '205/60R15', brand: 'تراینگل', src: ['demo/goods/1.jpg'] }
+      },
+      {
+        type: '',
+        features: { name: 'لاستیک خودرو نکسن مدل NBLUE HD PLUS', design_name: '205/60R15', brand: 'نکسن', src: ['demo/goods/2.jpg'] }
+      },
+      {
+        type: '',
+        features: { name: 'لاستیک خودرو نکسن مدل NFERA SU1', design_name: '235/40R18', brand: 'نکسن', src: ['demo/goods/3.jpg'] }
+      }
+    ]
+  }),
   head: () => ({
     title: 'بنت | محصولات',
     meta: [
@@ -24,10 +84,61 @@ export default {
       { name: 'twitter:site', content: '@website-username' },
       { name: 'fb:app_id', content: 'your_app_id' }
     ]
-  })
+  }),
+  mounted () {
+    window.addEventListener('scroll', this.toggleShadow)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.toggleShadow)
+  },
+  methods: {
+    searchTires () {
+
+    },
+    toggleShadow () {
+      const el = document.getElementById('header')
+      if (window.scrollY > 25) {
+        el.classList.add('box-shadow')
+      } else if (window.scrollY <= 25 && el.classList.contains('box-shadow')) {
+        el.classList.remove('box-shadow')
+      }
+    }
+  }
 }
 </script>
 
 <style lang="scss">
+#store-container {
+  @apply relative;
+  z-index: 0
+}
+
+header {
+  > button {
+    @apply rounded-md px-6;
+    transition: .3s all ease;
+  }
+
+  .region-selection {
+    @apply primary-shadow;
+    padding-top: 7px;
+    padding-bottom: 6px;
+
+    > i {
+      @apply relative text-default text-sm ml-1;
+      top: 2px;
+    }
+
+    &:hover > * {
+      @apply text-primary;
+    }
+  }
+
+  .sign {
+    @apply bg-primary text-white;
+    padding-top: 8px;
+    padding-bottom: 5px;
+  }
+}
 
 </style>
