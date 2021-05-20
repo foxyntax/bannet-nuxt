@@ -1,8 +1,8 @@
 <template>
-    <div id="avatar-zone" :class="{'rounded-full': (radius === 'full')}" :style="`width: ${size}; height: ${size}`">
-        <img :src="src" :alt="alt">
-				<i :class="icon" />
-    </div>
+  <div id="avatar-zone" :class="{'rounded-full': (radius === 'full')}" :style="`width: ${size}; height: ${size}`">
+    <img :src="src" :alt="alt">
+    <i :class="icon" />
+  </div>
 </template>
 
 <script>
