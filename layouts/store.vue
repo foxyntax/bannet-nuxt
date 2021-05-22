@@ -7,9 +7,9 @@
           <Badge id="category" :text="catChosen.name" :icon="`${catChosen.icon} text-xl xs:text-2xl`" icon-position="before" />
         </div>
 
-        <NuxtLink to="" class="text-center foot-icons">
+        <div class="text-center foot-icons cursor-pointer" @click="filShow = true">
           <i class="fal fa-sliders-h text-xl xs:text-2xl" />
-        </NuxtLink>
+        </div>
 
         <NuxtLink to="" class="text-center foot-icons">
           <i class="fal fa-tire text-xl xs:text-2xl" />
@@ -32,7 +32,7 @@
           <Cities />
         </SwiperCard>
 
-        <SwiperCard v-model="regFilter">
+        <SwiperCard v-model="filShow">
           <Filters />
         </SwiperCard>
       </div>
