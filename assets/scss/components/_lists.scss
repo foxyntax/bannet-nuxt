@@ -1,0 +1,7 @@
+.chosen-item {
+    @apply bg-primary text-white #{!important};
+  
+    &:before, &:after {
+      background: transparent !important;
+    }
+  }

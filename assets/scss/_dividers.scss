@@ -6,3 +6,10 @@ $divider_size: 10px;
 .divider-t {
     border-top: $divider_size solid lighten(black, 96%);
 }
+
+.divider-xs-b {
+    border-bottom: 1px solid lighten(black, 96%);
+}
+.divider-xs-t {
+    border-top: 1px solid lighten(black, 96%);
+}
