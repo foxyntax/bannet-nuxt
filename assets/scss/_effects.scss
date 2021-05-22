@@ -15,6 +15,11 @@
 
 .hover-1 {
 	@apply relative overflow-hidden cursor-default;
+	transition: .2s all ease-in;
+	-webkit-transition: .2s all ease-in;
+	-moz-transition: .2s all ease-in;
+	-ms-transition: .2s all ease-in;
+	-o-transition: .2s all ease-in;
 
 	&:hover:before {
 		@apply absolute top-0 bottom-0 left-0 right-0 mx-auto bg-gray-500 bg-opacity-10 h-full z-0;
