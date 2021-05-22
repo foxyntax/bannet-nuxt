@@ -48,14 +48,17 @@ export const mutations = {
 	UPDATE_LAYOUT_CATEGORY (state, payload) {
 		state.layout.categories[payload.state] = payload.value
 	},
-	UPDATE_LAYOUT_FILTERS_LIST (state, payload) {
-		state.layout.filters[payload.state].list = payload.value
-	},
-	UPDATE_LAYOUT_FILTERS_CHOSEN (state, payload) {
-		state.layout.filters[payload.state].chosen = payload.value
-	},
 	UPDATE_LAYOUT_REGION (state, payload) {
 		state.layout.regions[payload.state] = payload.value
+	},
+	UPDATE_LAYOUT_FILTER (state, payload) {
+		state.layout.filters[payload.state] = payload.value
+	},
+	UPDATE_LAYOUT_FILTER_LIST (state, payload) {
+		state.layout.filters[payload.state].list = payload.value
+	},
+	UPDATE_LAYOUT_FILTER_CHOSEN (state, payload) {
+		state.layout.filters[payload.state].chosen = payload.value
 	},
 
 	// Tables
