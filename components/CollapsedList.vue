@@ -4,7 +4,7 @@
       <span> {{ title }} </span>
       <i :class="{'fa-angle-down': !expanded, 'fa-angle-up': expanded}" class="fal relative top-0 text-2xl ml-2" />
     </p>
-    <ul v-show="expanded" class="w-full overflow-auto">
+    <ul v-show="expanded" class="w-full overflow-auto divider-xs-b">
       <li
         v-for="(item, index) in list"
         :key="index"
@@ -45,13 +45,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.chosen-item {
-  @apply bg-primary text-white;
-
-  &:before, &:after {
-    background: transparent;
-  }
-}
-</style>
