@@ -31,6 +31,7 @@ export const state = () => ({
         ]
     },
     filters: {
+        enabled: false,
         brand: {
             chosen: null,
             list: ['1', '2', '3', '4', '5', '6']
