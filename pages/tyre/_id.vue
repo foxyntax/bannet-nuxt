@@ -7,8 +7,9 @@
       </NuxtLink>
     </div>
     <!-- Image and Set into my favorites -->
-    <div>
-      <ImgSlider :src="tyre.features.src" />
+    <div id="img-zone">
+      <SwiperImg :src="tyre.features.src" />
+      <i class="far fa-bookmark bookmark fa-2x" />
     </div>
   </section>
 </template>
@@ -30,6 +31,26 @@ export default {
 		ads: [],
 		myAds: []
   }),
+	head: () => ({
+    title: 'بنت | نام متغیر از نام کالا',
+    meta: [
+      // SEO Examples
+      { hid: 'description', name: 'description', content: 'Gemnote VueJS Frontend Assessment' },
+      { hid: 'keywords', name: 'keywords', content: 'Gemnote, swag and gifts, gifts, gift inventory' },
+      { name: 'robots', content: 'noindex, nofollow' },
+      // Social Media
+      { property: 'og:site_name', content: 'Gemnote' },
+      { property: 'og:title', content: 'Gemnote VueJS Frontend Assessment' },
+      { property: 'og:description', content: 'Gemnote by VueJs | NuxtJS' },
+      { property: 'og:image', content: 'https://assets.website-files.com/5c7449f43783556baa54bd0e/60540cde101f8399aa9f3a8d_Gemnote_WebCover.png' },
+      { property: 'og:url', content: 'https://gemnote.com' },
+      { property: 'og:url', content: 'https://gemnote.com' },
+      { name: 'twitter:card', content: 'twitterCard' },
+      { name: 'twitter:image:alt', content: 'Alt text for image' },
+      { name: 'twitter:site', content: '@website-username' },
+      { name: 'fb:app_id', content: 'your_app_id' }
+    ]
+  }),
 	methods: {
 		newSliderIndex (index, type = 'exact') {
 			if (type === 'exact') {
@@ -50,28 +71,11 @@ export default {
 </script>
 
 <style lang="scss">
-#tyre-img {
-	@apply w-full mb-4;
+#img-zone {
+	@apply relative;
 
-	img {
-		width: inherit;
-		height: auto;
-	}
-}
-#slider-dot {
-	@apply w-full h-auto text-center;
-
-	div {
-		@apply inline-block bg-gray-200 mx-1;
-		width: 7px;
-		height: 7px;
-		border-radius: 80px;
-		transition: all .2s ease-in;
-	}
-
-	.active-dot {
-		@apply bg-primary;
-		width: 20px !important;
+	> i {
+		@apply absolute z-50 top-1 right-5 text-gray-600;
 	}
 }
 </style>
