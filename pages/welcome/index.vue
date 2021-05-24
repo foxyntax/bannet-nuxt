@@ -2,9 +2,11 @@
   <div>
     <!-- Header -->
     <section class="px-4 mb-4 xs:mb-16">
-      <NuxtLink to="/" class="w-full block text-left mb-5 md:mb-28 py-6">
-        <i class="fas fa-arrow-left text-primary text-2xl" />
-      </NuxtLink>
+      <div class="w-full block text-left mb-5 md:mb-28 py-6">
+        <NuxtLink to="/">
+          <i class="fas fa-arrow-left text-primary text-2xl" />
+        </NuxtLink>
+      </div>
       <div class="w-full text-center">
         <h2 class="text-5xl text-default-lighten mb-2 en">
           BANNET
