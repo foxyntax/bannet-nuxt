@@ -30,8 +30,9 @@
       </div>
     </section>
 
+    <!-- Goods [Tires] -->
     <article class="p-2 xs:p-3 mb-12">
-      <TireCard v-for="(item, index) in tireList" :key="index" :data="item" :index="index" />
+      <TyreCard v-for="(item, index) in tireList" :key="index" :data="item" :index="index" />
     </article>
   </section>
 </template>
@@ -53,15 +54,15 @@ export default {
     tireList: [
       {
         type: '',
-        features: { name: 'لاستیک خودرو تراینگل مدل TC101', design_name: '205/60R15', brand: 'تراینگل', src: ['demo/goods/1.jpg'] }
+        features: { id: 1, name: 'لاستیک خودرو تراینگل مدل TC101', design_name: '205/60R15', brand: 'تراینگل', src: ['demo/goods/1.jpg'] }
       },
       {
         type: '',
-        features: { name: 'لاستیک خودرو نکسن مدل NBLUE HD PLUS', design_name: '205/60R15', brand: 'نکسن', src: ['demo/goods/2.jpg'] }
+        features: { id: 1, name: 'لاستیک خودرو نکسن مدل NBLUE HD PLUS', design_name: '205/60R15', brand: 'نکسن', src: ['demo/goods/2.jpg'] }
       },
       {
         type: '',
-        features: { name: 'لاستیک خودرو نکسن مدل NFERA SU1', design_name: '235/40R18', brand: 'نکسن', src: ['demo/goods/3.jpg'] }
+        features: { id: 1, name: 'لاستیک خودرو نکسن مدل NFERA SU1', design_name: '235/40R18', brand: 'نکسن', src: ['demo/goods/3.jpg'] }
       }
     ]
   }),
