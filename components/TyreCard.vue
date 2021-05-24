@@ -1,15 +1,15 @@
 <template>
-  <div class="tire-card">
-    <NuxtLink to="">
-      <img :src="tire.src[0]" :alt="tire.name">
+  <div class="tyre-card">
+    <NuxtLink :to="`tyre/${tyre.id}`">
+      <img :src="tyre.src[0]" :alt="tyre.name">
       <div class="p-2 xs:p-3">
         <small class="sans-number text-gray-400">
-          <i class="fad fa-tire" />
-          {{ tire.design_name }}
-          <Badge type="small" :text="tire.brand" classes="inline mr-1" />
+          <i class="fad fa-tyre" />
+          {{ tyre.design_name }}
+          <Badge type="small" :text="tyre.brand" classes="inline mr-1" />
         </small>
         <h3 class="sans-number text-md text-gray-600 mt-3">
-          {{ tire.name }}
+          {{ tyre.name }}
         </h3>
       </div>
     </NuxtLink>
@@ -32,7 +32,7 @@ export default {
     }
   },
   computed: {
-		tire () {
+		tyre () {
 			return this.data.features
 		}
   }
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style lang="scss">
-.tire-card {
+.tyre-card {
 	@apply relative w-full box-shadow rounded-lg my-5 overflow-hidden;
 
 	a {
@@ -50,7 +50,7 @@ export default {
 			@apply w-full h-auto;
 		}
 
-		.fa-tire {
+		.fa-tyre {
 			@apply relative text-gray-400 ml-1;
 			top: 1px;
 		}
