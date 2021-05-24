@@ -59,100 +59,111 @@ export default {
                 this.$store.commit('UPDATE_LAYOUT_REGION', { state: 'list', value: val })
             }
         },
-        filBrand: {
+        filters () {
+            return this.layout.filters
+        },
+        filShow: {
             get () {
-                return this.layout.filters.brand
+                return this.filters.enabled
             },
             set (val) {
-                this.$store.commit('UPDATE_LAYOUT_FILTERS_CHOSEN', { state: 'brand', value: val })
+                this.$store.commit('UPDATE_LAYOUT_FILTER', { state: 'enabled', value: val })
+            }
+        },
+        filBrand: {
+            get () {
+                return this.filters.brand.chosen
+            },
+            set (val) {
+                this.$store.commit('UPDATE_LAYOUT_FILTER_CHOSEN', { state: 'brand', value: val })
             }
         },
         filBrandList: {
             get () {
-                return this.layout.filters.brand
+                return this.filters.brand.list
             },
             set (val) {
-                this.$store.commit('UPDATE_LAYOUT_FILTERS_LIST', { state: 'brand', value: val })
+                this.$store.commit('UPDATE_LAYOUT_FILTER_LIST', { state: 'brand', value: val })
             }
         },
         filWidth: {
             get () {
-                return this.layout.filters.width
+                return this.filters.width.chosen
             },
             set (val) {
-                this.$store.commit('UPDATE_LAYOUT_FILTERS_CHOSEN', { state: 'width', value: val })
+                this.$store.commit('UPDATE_LAYOUT_FILTER_CHOSEN', { state: 'width', value: val })
             }
         },
         filWidthList: {
             get () {
-                return this.layout.filters.width
+                return this.filters.width.list
             },
             set (val) {
-                this.$store.commit('UPDATE_LAYOUT_FILTERS_LIST', { state: 'width', value: val })
+                this.$store.commit('UPDATE_LAYOUT_FILTER_LIST', { state: 'width', value: val })
             }
         },
         filWeight: {
             get () {
-                return this.layout.filters.weight
+                return this.filters.weight.chosen
             },
             set (val) {
-                this.$store.commit('UPDATE_LAYOUT_FILTERS_CHOSEN', { state: 'weight', value: val })
+                this.$store.commit('UPDATE_LAYOUT_FILTER_CHOSEN', { state: 'weight', value: val })
             }
         },
         filWeightList: {
             get () {
-                return this.layout.filters.weight
+                return this.filters.weight.list
             },
             set (val) {
-                this.$store.commit('UPDATE_LAYOUT_FILTERS_LIST', { state: 'weight', value: val })
+                this.$store.commit('UPDATE_LAYOUT_FILTER_LIST', { state: 'weight', value: val })
             }
         },
         filHeight: {
             get () {
-                return this.layout.filters.height
+                return this.filters.height.chosen
             },
             set (val) {
-                this.$store.commit('UPDATE_LAYOUT_FILTERS_CHOSEN', { state: 'height', value: val })
+                this.$store.commit('UPDATE_LAYOUT_FILTER_CHOSEN', { state: 'height', value: val })
             }
         },
         filHeightList: {
             get () {
-                return this.layout.filters.height
+                return this.filters.height.list
             },
             set (val) {
-                this.$store.commit('UPDATE_LAYOUT_FILTERS_LIST', { state: 'height', value: val })
+                this.$store.commit('UPDATE_LAYOUT_FILTER_LIST', { state: 'height', value: val })
             }
         },
         filTireHeight: {
             get () {
-                return this.layout.filters.tire_height
+                return this.filters.tire_height.chosen
             },
             set (val) {
-                this.$store.commit('UPDATE_LAYOUT_FILTERS_CHOSEN', { state: 'tire_height', value: val })
+                this.$store.commit('UPDATE_LAYOUT_FILTER_CHOSEN', { state: 'tire_height', value: val })
             }
         },
         filTireHeightList: {
             get () {
-                return this.layout.filters.tire_height
+                return this.filters.tire_height.list
             },
             set (val) {
-                this.$store.commit('UPDATE_LAYOUT_FILTERS_LIST', { state: 'tire_height', value: val })
+                this.$store.commit('UPDATE_LAYOUT_FILTER_LIST', { state: 'tire_height', value: val })
             }
         },
         filForBack: {
             get () {
-                return this.layout.filters.for_back
+                return this.filters.for_back.chosen
             },
             set (val) {
-                this.$store.commit('UPDATE_LAYOUT_FILTERS_CHOSEN', { state: 'for_back', value: val })
+                this.$store.commit('UPDATE_LAYOUT_FILTER_CHOSEN', { state: 'for_back', value: val })
             }
         },
         filForFront: {
             get () {
-                return this.layout.filters.for_front
+                return this.filters.for_front.chosen
             },
             set (val) {
-                this.$store.commit('UPDATE_LAYOUT_FILTERS_CHOSEN', { state: 'for_front', value: val })
+                this.$store.commit('UPDATE_LAYOUT_FILTER_CHOSEN', { state: 'for_front', value: val })
             }
         }
     }
