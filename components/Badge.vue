@@ -1,12 +1,12 @@
 <template>
-    <p
-      class="badge sans-number"
-      :class="`${classes} ${getTypeClass} ${getColorClass} ${getFontStyle}`"
-    >
-      <i v-show="iconPosition == 'before'" :class="icon" class="ml-1" />
-      <span> {{ text }} </span>
-      <i v-show="iconPosition == 'after'" :class="icon" class="mr-1" />
-    </p>
+  <p
+    class="badge sans-number"
+    :class="`${classes} ${getTypeClass} ${getColorClass} ${getFontStyle}`"
+  >
+    <i v-show="iconPosition === 'before'" :class="icon + ' ' + getTextColor()" class="ml-1" />
+    <span :class="getTextColor()"> {{ text }} </span>
+    <i v-show="iconPosition === 'after'" :class="icon + ' ' + getTextColor()" class="mr-1" />
+  </p>
 </template>
 
 <script>
@@ -62,12 +62,22 @@ export default {
         return 'badge-default'
       } else if (this.color === 'danger') {
         return 'badge-danger'
-      } else {
+      } else if (this.color === 'primary') {
         return 'badge-primary'
+      } else {
+        return 'bg-' + this.color + '-200'
       }
     },
     getFontStyle () {
       return (this.faNumber) ? 'sans-number' : null
+    }
+  },
+  methods: {
+    getTextColor () {
+      if (this.color !== ('default' && 'danger' && 'primary')) {
+        return 'text-' + this.color + '-500'
+      }
+      return ''
     }
   }
 }
