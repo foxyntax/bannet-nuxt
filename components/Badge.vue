@@ -14,7 +14,7 @@ export default {
   props: {
     text: {
       required: true,
-      type: String
+      type: [String, Number]
     },
     type: {
         required: false,
