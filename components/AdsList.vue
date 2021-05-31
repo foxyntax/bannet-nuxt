@@ -1,40 +1,48 @@
 <template>
   <div id="tyre-ads-tab">
-    <div id="header">
-      <ContractIcon class="mx-auto mb-6" />
-      <p>میانگین قیمت تایر</p>
-      <span> {{ avarage | toMoney }} </span>
+    <div v-if="list.length > 0">
+      <div id="header">
+        <ContractIcon class="mx-auto mb-6" />
+        <p>میانگین قیمت تایر</p>
+        <span> {{ avarage | toMoney }} </span>
+      </div>
+      <ul id="ads">
+        <li v-for="(item, index) in list" :key="index" class="card-list">
+          <NuxtLink to="">
+            <div class="title">
+              <div class="cost">
+                <p> {{ item.meta.cost | toMoney }} </p>
+                <span>برای {{ item.meta.count }} تایر</span>
+              </div>
+              <small class="date"> {{ item.expired_at }} </small>
+            </div>
+
+            <div class="badges">
+              <Badge color="primary" icon="fad fa-city" icon-position="before" :text="item.meta.city" classes="inline ml-1" />
+              <Badge color="pink" icon="fad fa-truck-loading" icon-position="before" :text="item.meta.shipment_day + ' روز'" classes="inline ml-1" />
+              <Badge color="yellow" icon="fad fa-industry" icon-position="before" :text="item.meta.tyre_year" classes="inline ml-1" />
+            </div>
+
+            <div class="user">
+              <div>
+                <Avatar size="30px" :src="item.users.meta.personal.avatar" :alt="item.users.full_name" class="inline-block" />
+                <small class="mr-1 inline-block">{{ item.users.full_name }}</small>
+              </div>
+              <div class="relative top-1">
+                <i class="fal fa-star text-xs" />
+                <small>{{ getAvarageScore(item.users.meta.scores) }}</small>
+              </div>
+            </div>
+          </NuxtLink>
+        </li>
+      </ul>
     </div>
-    <ul id="ads">
-      <li v-for="(item, index) in list" :key="index" class="card-list">
-        <NuxtLink to="">
-          <div class="title">
-            <div class="cost">
-              <p> {{ item.meta.cost | toMoney }} </p>
-              <span>برای {{ item.meta.count }} تایر</span>
-            </div>
-            <small class="date"> {{ item.expired_at }} </small>
-          </div>
-
-          <div class="badges">
-            <Badge color="primary" icon="fad fa-city" icon-position="before" :text="item.meta.city" classes="inline ml-1" />
-            <Badge color="pink" icon="fad fa-truck-loading" icon-position="before" :text="item.meta.shipment_day + ' روز'" classes="inline ml-1" />
-            <Badge color="yellow" icon="fad fa-industry" icon-position="before" :text="item.meta.tyre_year" classes="inline ml-1" />
-          </div>
-
-          <div class="user">
-            <div>
-              <Avatar size="30px" :src="item.users.meta.personal.avatar" :alt="item.users.full_name" class="inline-block" />
-              <small class="mr-1 inline-block">{{ item.users.full_name }}</small>
-            </div>
-            <div class="relative top-1">
-              <i class="fal fa-star text-xs" />
-              <small>{{ getAvarageScore(item.users.meta.scores) }}</small>
-            </div>
-          </div>
-        </NuxtLink>
-      </li>
-    </ul>
+    <div v-else>
+      <div id="header">
+        <ContractIcon class="mx-auto mb-6 gray-filter" />
+        <p>معامله فعالی پیدا نشد!</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -78,6 +86,10 @@ export default {
 
 			> span {
 				@apply sans-number text-gray-500;
+			}
+
+			.gray-filter {
+				filter: grayscale(100);
 			}
 		}
 
