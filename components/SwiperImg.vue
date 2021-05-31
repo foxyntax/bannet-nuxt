@@ -44,7 +44,7 @@ export default {
 
 <style lang="scss">
 #tyre-img {
-	@apply w-full mb-4;
+	@apply w-full mb-1;
 
 	img {
 		width: inherit;
