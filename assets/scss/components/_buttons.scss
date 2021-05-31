@@ -34,6 +34,11 @@ button {
     @apply outline-none border-none;
   }
 
+  i {
+    @apply relative;
+    top: 1px;
+  }
+
   .spinner {
       width: 20px;
       height: 20px;
