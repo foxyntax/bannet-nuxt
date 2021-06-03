@@ -22,21 +22,21 @@
         <NuxtLink v-else to="/welcome" class="text-center foot-icons">
           <i class="fal fa-sign-in ticker text-xl xs:text-2xl" />
         </NuxtLink>
-
-        <!-- Modals: [Categories, Filters, Region] -->
-        <SwiperCard v-model="catShow">
-          <Categories />
-        </SwiperCard>
-
-        <SwiperCard v-model="regShow">
-          <Cities />
-        </SwiperCard>
-
-        <SwiperCard v-model="filShow">
-          <Filters />
-        </SwiperCard>
       </div>
     </footer>
+
+    <!-- Modals: [Categories, Filters, Region] -->
+    <SwiperCard v-model="catShow">
+      <Categories />
+    </SwiperCard>
+
+    <SwiperCard v-model="regShow">
+      <Cities />
+    </SwiperCard>
+
+    <SwiperCard v-model="filShow">
+      <Filters />
+    </SwiperCard>
   </div>
 </template>
 
