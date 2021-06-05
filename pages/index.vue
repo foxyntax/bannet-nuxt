@@ -47,7 +47,7 @@ export default {
     }
   },
   mixins: [user, layout],
-  layout: 'store',
+  layout: 'nav',
   data: () => ({
     chosenCategory: 'تایر خودرو سواری',
     countTires: 538,
