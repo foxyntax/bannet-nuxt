@@ -81,7 +81,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://gemnote.com/api/',
+    baseURL: 'https://sv.banett.ir/api/',
 		headers: {
 			'Content-Type': 'application/json',
 			'Access-Control-Allow-Origin': '*'
