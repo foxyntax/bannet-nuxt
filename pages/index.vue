@@ -1,7 +1,7 @@
 <template>
   <section id="store-container">
-    <header id="header" class="sticky top-0 flex flex-row justify-between items-center bg-white z-50 p-2 xs:p-3">
-      <NuxtLink v-if="id !== 0" to="/profile/:id">
+    <header id="store-header" class="sticky top-0 flex flex-row justify-between items-center bg-white z-50 p-2 xs:p-3">
+      <NuxtLink v-if="id !== 0" to="/me/:id/profile">
         <Avatar src="demo/avatar.jpg" alt="تصویر کاربر" class="inline-block" />
       </NuxtLink>
 
@@ -51,6 +51,9 @@ export default {
   data: () => ({
     chosenCategory: 'تایر خودرو سواری',
     countTires: 538,
+    limit: 10,
+    offset: 0,
+    get_filters: 1,
     tireList: [
       {
         type: '',
@@ -66,6 +69,9 @@ export default {
       }
     ]
   }),
+  fetch () {
+    this.render_products()
+  },
   head: () => ({
     title: 'بنت | محصولات',
     meta: [
@@ -97,12 +103,19 @@ export default {
 
     },
     toggleShadow () {
-      const el = document.getElementById('header')
+      const el = document.getElementById('store-header')
       if (window.scrollY > 25) {
         el.classList.add('box-shadow')
       } else if (window.scrollY <= 25 && el.classList.contains('box-shadow')) {
         el.classList.remove('box-shadow')
       }
+    },
+    render_products () {
+      this.$axios.get(`user/store/fetch/product/${this.offset}/${this.limit}/${this.get_filters}?full&type=1`).then((res) => {
+        this.tireList = res.data.body.products
+      }).catch((err) => {
+        console.log(err.reponse)
+      })
     }
   }
 }
@@ -114,7 +127,7 @@ export default {
   z-index: 0
 }
 
-header {
+#store-header {
   > button {
     @apply rounded-md px-6;
     transition: .3s all ease;
