@@ -1,9 +1,10 @@
 <template>
   <div id="logged-container">
+    <HeadProfileLayout v-if="$route.fullPath.includes('/me')" />
     <Nuxt />
     <footer>
       <div class="grid grid-cols-5 grid-rows-1 gap-1 px-2 py-2">
-        <div class="text-center" :class="{'col-span-2': $route.fullPath === '/', 'col-span-3': $route.fullPath !== '/'}" @click="catShow = true">
+        <div class="text-center" :class="{'col-span-2': $route.fullPath === '/', 'col-span-3': $route.fullPath.includes('/me')}" @click="catShow = true">
           <!-- Choose Cars -->
           <Badge v-if="$route.fullPath === '/'" id="category" :text="catChosen.name" :icon="`${catChosen.icon} text-xl xs:text-2xl`" icon-position="before" />
           <div v-else class="w-full">
@@ -23,7 +24,7 @@
           <i class="fal fa-tire text-xl xs:text-2xl" />
         </NuxtLink>
 
-        <NuxtLink v-if="id !== 0" to="/profile/:id" class="text-center foot-icons">
+        <NuxtLink v-if="id !== 0" to="/me/:id" class="text-center foot-icons">
           <i class="fal fa-user text-xl xs:text-2xl" />
         </NuxtLink>
 
