@@ -1,7 +1,7 @@
 <template>
   <div class="tyre-card">
-    <NuxtLink :to="`tyre/${tyre.id}`">
-      <img :src="tyre.src[0]" :alt="tyre.name">
+    <NuxtLink :to="`tyre/${data.id}`">
+      <img :src="`https://sv.banett.ir/uploads${tyre.src[0]}`" :alt="tyre.name">
       <div class="p-2 xs:p-3">
         <small class="sans-number text-gray-400">
           <i class="fad fa-tyre" />
@@ -23,18 +23,18 @@
 export default {
   props: {
     data: {
-			required: true,
-			type: Object
+		required: true,
+		type: Object
     },
-		index: {
-			required: true,
-			type: Number
+	index: {
+		required: true,
+		type: Number
     }
   },
   computed: {
-		tyre () {
-			return this.data.features
-		}
+	tyre () {
+		return this.data.features
+	}
   }
 }
 </script>
