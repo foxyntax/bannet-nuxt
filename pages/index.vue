@@ -99,7 +99,7 @@ export default {
     },
     render_products () {
       this.$axios.get(`user/store/fetch/product/${this.offset}/${this.limit}/${this.get_filters}?full&type=1`).then((res) => {
-        // this.tireList = res.data.body.products
+        this.tireList = res.data.body.products
       }).catch((err) => {
         console.log(err.reponse)
       })
