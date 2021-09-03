@@ -54,20 +54,7 @@ export default {
     limit: 10,
     offset: 0,
     get_filters: 1,
-    tireList: [
-      {
-        type: '',
-        features: { id: 1, name: 'لاستیک خودرو تراینگل مدل TC101', design_name: '205/60R15', brand: 'تراینگل', src: ['demo/goods/1.jpg'] }
-      },
-      {
-        type: '',
-        features: { id: 1, name: 'لاستیک خودرو نکسن مدل NBLUE HD PLUS', design_name: '205/60R15', brand: 'نکسن', src: ['demo/goods/2.jpg'] }
-      },
-      {
-        type: '',
-        features: { id: 1, name: 'لاستیک خودرو نکسن مدل NFERA SU1', design_name: '235/40R18', brand: 'نکسن', src: ['demo/goods/3.jpg'] }
-      }
-    ]
+    tireList: []
   }),
   fetch () {
     this.render_products()
@@ -112,7 +99,7 @@ export default {
     },
     render_products () {
       this.$axios.get(`user/store/fetch/product/${this.offset}/${this.limit}/${this.get_filters}?full&type=1`).then((res) => {
-        this.tireList = res.data.body.products
+        // this.tireList = res.data.body.products
       }).catch((err) => {
         console.log(err.reponse)
       })
