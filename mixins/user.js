@@ -82,6 +82,14 @@ export default {
                 this.$store.commit('UPDATE_USER_PERSONAL', { index: 'postCode', value: val })
             }
         },
+        phone: {
+            get () {
+                return this.personal.phone
+            },
+            set (val) {
+                this.$store.commit('UPDATE_USER_PERSONAL', { index: 'phone', value: val })
+            }
+        },
         shabaa: {
             get () {
                 return this.financial.shabaa

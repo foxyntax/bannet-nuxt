@@ -1,5 +1,5 @@
 export const state = () => ({
-	id: 0,
+	id: 1,
     name: 'میلاد محمدی', // ""
     tell: '',
     personal: {
@@ -7,7 +7,8 @@ export const state = () => ({
         province: null,
         city: null,
         addr: null,
-        postCode: null
+        postCode: null,
+        phone: null
     },
     financial: {
         shabaa: null,
