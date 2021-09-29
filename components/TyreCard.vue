@@ -44,7 +44,7 @@ export default {
 	@apply relative w-full box-shadow rounded-lg my-5 overflow-hidden;
 
 	a {
-		@apply z-0;
+		@apply z-0 overflow-hidden;
 
 		img {
 			@apply w-full h-auto;
