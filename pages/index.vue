@@ -1,6 +1,6 @@
 <template>
   <section id="store-container">
-    <header id="store-header" class="sticky top-0 flex flex-row justify-between items-center bg-white z-50 p-2 xs:p-3">
+    <header id="store-header" class="sticky top-0 flex flex-row justify-between items-center bg-white z-50 p-2 xs:p-4">
       <NuxtLink v-if="id !== 0" to="/me/:id/profile">
         <Avatar src="demo/avatar.jpg" alt="تصویر کاربر" class="inline-block" />
       </NuxtLink>
