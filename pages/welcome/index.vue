@@ -4,7 +4,7 @@
     <section class="px-4 mb-4 xs:mb-16">
       <div class="w-full block text-left mb-5 md:mb-28 py-6">
         <NuxtLink to="/">
-          <i class="fas fa-arrow-left text-primary text-2xl" />
+          <i class="fal fa-arrow-left text-primary text-2xl" />
         </NuxtLink>
       </div>
       <div class="w-full text-center">
@@ -132,7 +132,7 @@
 <script>
 export default {
   data: () => ({
-    hasTokenSent: true, // true
+    hasTokenSent: false, // true
     tell: '',
     token: '',
     userToken: [],
