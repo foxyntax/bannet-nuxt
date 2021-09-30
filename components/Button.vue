@@ -1,5 +1,5 @@
 <template>
-  <button class="bannet-btn" :class="classes">
+  <button class="bannet-btn" :class="classes + ' ' + getSize + ' ' +getTemplate">
     <span v-show="!loading">
       <i v-if="iconPosition === 'before'" :class="icon" class="ml-1" />
       {{ text }}
@@ -15,13 +15,24 @@
 <script>
 export default {
   props: {
+    size: {
+      required: false,
+      type: String,
+      default: 'bannet-btn-normal'
+    },
+    template: {
+      required: false,
+      type: String,
+      default: 'default'
+    },
     text: {
       required: true,
       type: String
     },
     classes: {
-      required: true,
-      type: String
+      required: false,
+      type: String,
+      default: ''
     },
     loading: {
       required: false,
@@ -37,6 +48,32 @@ export default {
         required: false,
         type: String,
         default: 'before'
+    }
+  },
+  computed: {
+    getSize () {
+      switch (this.size) {
+        case 'mini':
+          return 'size-mini'
+        default:
+          return 'size-normal'
+      }
+    },
+    getTemplate () {
+      switch (this.template) {
+        case 'text':
+          return 'temp-text'
+        case 'bordered':
+          return 'temp-bordered'
+        case 'indego':
+          return 'temp-indego'
+        case 'red':
+          return 'temp-red'
+        case 'yellow':
+          return 'temp-yellow'
+        default:
+          return 'temp-default'
+      }
     }
   }
 }
