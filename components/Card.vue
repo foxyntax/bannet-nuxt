@@ -1,8 +1,10 @@
 <template>
   <section class="card">
-    <div v-if="mainTitle !== '' && status !== ''" class="card-title">
-      <h2> {{ mainTitle }} </h2>
-      <div>
+    <div class="card-title">
+      <h2 v-if="mainTitle !== ''">
+        {{ mainTitle }}
+      </h2>
+      <div v-if="status !== ''">
         <span>
           <i v-show="status == 1" class="fas fa-check text-green-500" />
           <i v-show="status == 0" class="fad fa-clock text-gray-500" />
@@ -57,11 +59,12 @@ export default {
 
     span {
       @apply relative;
-      top: 1px;
+      top: -1px;
     }
 
     h2 + div {
-      @apply relative -top-1;
+      @apply relative;
+      top: -4px;
     }
 
     h2, small, i {
