@@ -33,3 +33,7 @@ $empty_zone: #24292c;
 .bg-danger {
     background: $danger_color;
 }
+
+.bg-primary-half {
+    background-color: transparentize($primary_color, .8);
+}
