@@ -23,6 +23,14 @@ export default {
             set (val) {
                 this.$store.commit('UPDATE_RECEIPT', val)
             }
+        },
+        memberships: {
+            get () {
+                return this.$store.state.membership.list
+            },
+            set (val) {
+                this.$store.commit('UPDATE_MEMBERSHIP', val)
+            }
         }
     }
 }
