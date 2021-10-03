@@ -1,9 +1,9 @@
 <template>
-  <button class="bannet-btn" :class="classes + ' ' + getSize + ' ' +getTemplate">
+  <button class="bannet-btn" :class="classes + ' ' + getSize + ' ' + getTemplate">
     <span v-show="!loading">
-      <i v-if="iconPosition === 'before'" :class="icon" class="ml-1" />
+      <i v-if="iconPosition === 'before' && icon !== ''" :class="icon" class="ml-1" />
       {{ text }}
-      <i v-if="iconPosition === 'after'" :class="icon" class="mr-1" />
+      <i v-if="iconPosition === 'after' && icon !== ''" :class="icon" class="mr-1" />
     </span>
     <div v-show="loading" class="spinner">
       <div class="dot1" />
