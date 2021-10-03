@@ -26,8 +26,13 @@
   }
 }
 
+#nav-body {
+  padding-bottom: 100px;
+}
+
 footer {
     @apply fixed w-full bg-white box-shadow left-0 bottom-0 right-0;
+
   
     #category {
       @apply text-center cursor-pointer py-2 text-xs xs:text-sm #{!important};
@@ -58,4 +63,4 @@ footer {
       animation-direction: alternate;
       animation-iteration-count: infinite;
     }
-  }
+}
