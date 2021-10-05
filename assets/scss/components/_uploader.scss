@@ -1,0 +1,38 @@
+$border_size: 1px;
+
+.uploader, .uploader * {
+    @apply relative;
+}
+
+.uploader {
+
+    > input {
+        @apply hidden;
+    }
+
+    label {
+        width: inherit;
+
+        > p {
+            @apply block mb-2 px-4;
+            color: lighten($default_color, 5%);
+        }
+
+        .upload-zone {
+            @apply rounded-lg text-center py-20;
+            border: $border_size dashed lighten($default_color, 65%);
+
+            i {
+                @apply block text-primary text-6xl mb-2;
+            }
+
+            p {
+                @apply text-gray-700 text-lg sans-number;
+            }
+
+            small {
+                @apply text-gray-500 text-xs sans-number;
+            }
+        }
+    }
+}
