@@ -1,0 +1,62 @@
+.default-input-config {
+    @apply relative rounded-lg;
+    width: inherit;
+    outline: none;
+    border: $border_size solid lighten($default_color, 70%);
+    color: lighten($default_color, 35%);
+    transition: all .23s ease-out;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .23s ease-out;
+    -ms-transition: all .23s ease-out;
+    -o-transition: all .23s ease-out;
+}
+
+.select-input, .select-input * {
+    @apply relative;
+}
+.select-input:hover, .select-input:valid, .select-input-activated {
+    border: $border_size solid $primary_color;
+    box-shadow: -1px -2px 5px 2px whitesmoke,
+                1px -2px 5px 2px whitesmoke,
+                0 1px 2px 0 lighten($primary_color, 40%),
+                0 0 4px 0 lighten($primary_color, 70%);
+}
+
+.select-input {
+    @apply relative default-input-config pb-2 pt-3 px-2;
+
+    i {
+        top: 2px;
+    }
+
+    .select-zone {
+        @apply w-full bg-white mx-auto inset-0 absolute;
+    
+        .select-list {
+            @apply w-full rounded-lg bg-white shadow-lg px-3 py-2 z-50 overflow-x-hidden relative;
+            min-height: 100px;
+            max-height: 235px;
+        
+            .select-options {
+        
+                li {
+                    @apply w-full rounded-lg bg-white pt-2 pb-1 px-2 mb-2 mx-auto cursor-pointer;
+                }
+        
+                .active-item {
+                    @apply text-white #{!important};
+                    background: $default_color;
+                }
+                
+            }
+        
+        }
+    }
+}
+
+.select-disabled, .select-disabled:hover, .select-disabled:valid {
+    border: $border_size solid lighten($default_color, 70%) !important;
+    color: lighten($default_color, 55%) !important;
+    box-shadow: none !important;
+}
+
