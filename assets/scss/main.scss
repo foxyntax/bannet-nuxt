@@ -16,6 +16,8 @@ Components
 @import "components/buttons";
 @import "components/badges";
 @import "components/lists";
+@import "components/selects";
+@import "components/uploader";
 
 /**
 
@@ -29,3 +31,4 @@ Layouts
 Pages
 
 **/
+@import "pages/identity";
