@@ -16,6 +16,10 @@
   }
 }
 
+.w-full-force {
+  @apply w-full #{!important};
+}
+
 button {
   &:hover, &:focus, &:active, &:disabled {
     outline: none;

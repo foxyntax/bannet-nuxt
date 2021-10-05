@@ -1,6 +1,6 @@
 $border_size: 1px;
 
-.defaul-input-config {
+.default-input-config {
     @apply relative rounded-lg;
     width: inherit;
     outline: none;
@@ -13,31 +13,40 @@ $border_size: 1px;
     -o-transition: all .23s ease-out;
 }
 
+.label {
+    @apply block mb-2 px-4;
+    color: lighten($default_color, 5%);
+}
+
 .input-text-area {
     @apply relative;
 
     > label {
-        @apply block mb-2 px-4;
-        color: lighten($default_color, 40%);
+        @apply label;
     }
 
-    > input {
-        @apply defaul-input-config pb-2 pt-3 px-2;
+    > input, textarea {
+        @apply default-input-config pb-2 pt-3 px-2;
         
         &:hover, &:valid {
             border: $border_size solid $primary_color;
             box-shadow: -1px -2px 5px 2px whitesmoke,
                         1px -2px 5px 2px whitesmoke,
-                        0 1px 2px 0 lighten($primary_color, 20%),
-                        0 0 4px 0 lighten($primary_color, 35%);
+                        0 1px 2px 0 lighten($primary_color, 40%),
+                        0 0 4px 0 lighten($primary_color, 70%);
         }
+    }
+
+    > textarea {
+        @apply overflow-hidden;
+        min-height: 130px;
     }
 
     
 }
 
-.default-text-input {
-    @apply defaul-input-config py-3;
+.search-input {
+    @apply default-input-config py-3;
     width: inherit;
     outline: none;
 
