@@ -6,8 +6,9 @@
 export default {
     props: {
         size: {
-            required: true,
-            type: String
+            required: false,
+            type: String,
+            default: 'normal'
         }
     },
     computed: {
