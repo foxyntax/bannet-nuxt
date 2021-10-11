@@ -40,6 +40,9 @@ export const mutations = {
 	UPDATE_RECEIPT (state, payload) {
 		state.receipt.list = payload
 	},
+	UPDATE_MEMBERSHIP (state, payload) {
+		state.membership.list = payload
+	},
 
 	// Layout
 	UPDATE_LAYOUT (state, payload) {
