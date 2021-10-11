@@ -5,15 +5,15 @@
     </h6>
     <section id="filter-list" class="mt-5 overflow-auto">
       <!-- Brand -->
-      <CollapsedList v-model="filBrand" :list="filBrandList" title="برند تایر" />
+      <FilterList v-model="filBrand" :list="filBrandList" title="برند تایر" />
       <!-- Width -->
-      <CollapsedList v-model="filWidth" :list="filWidthList" title="عرض تایر" />
+      <FilterList v-model="filWidth" :list="filWidthList" title="عرض تایر" />
       <!-- Weight -->
-      <CollapsedList v-model="filWeight" :list="filWeightList" title="وزن تایر" />
+      <FilterList v-model="filWeight" :list="filWeightList" title="وزن تایر" />
       <!-- Height -->
-      <CollapsedList v-model="filHeight" :list="filHeightList" title="ارتفاع کل تایر" />
+      <FilterList v-model="filHeight" :list="filHeightList" title="ارتفاع کل تایر" />
       <!-- TireHeight -->
-      <CollapsedList v-model="filTireHeight" :list="filTireHeightList" title="ارتفاع تایر" />
+      <FilterList v-model="filTireHeight" :list="filTireHeightList" title="ارتفاع تایر" />
       <!-- filForBack & filForFront -->
       <ul class="w-full divider-t">
         <li
