@@ -1,5 +1,5 @@
 export default {
-  
+
   server: {
 		port: 3000, // default: 3000
 		host: '0.0.0.0' // default: localhost
@@ -81,7 +81,8 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://sv.banett.ir/api/',
+    // baseURL: 'https://sv.banett.ir/api/',
+    baseURL: 'http://localhost/bannet-sv/api/',
 		headers: {
 			'Content-Type': 'application/json',
 			'Access-Control-Allow-Origin': '*'
@@ -91,13 +92,13 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     meta: {
-			title: 'Gemnote',
+			title: 'Banett',
 			author: 'FOXYNTAX'
 		},
 		manifest: {
-			name: 'Gemnote App',
-			short_name: 'Gemnote',
-			lang: 'en'
+			name: 'Banett App',
+			short_name: 'Banett',
+			lang: 'fa'
 		},
 		icon: {
 			source: '/pwa.png',
