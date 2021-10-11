@@ -1,5 +1,5 @@
 <template>
-  <button class="bannet-btn" :class="classes + ' ' + getSize + ' ' + getTemplate">
+  <button class="bannet-btn" :class="classes + ' ' + getSize + ' ' + getTemplate" @click="click">
     <span v-show="!loading">
       <i v-if="iconPosition === 'before' && icon !== ''" :class="icon" class="ml-1" />
       {{ text }}
@@ -48,6 +48,11 @@ export default {
         required: false,
         type: String,
         default: 'before'
+    },
+    click: {
+        required: false,
+        type: Function,
+        default: () => null
     }
   },
   computed: {
