@@ -14,13 +14,13 @@
       <NuxtLink to="/me/1/profile">
         پروفایل
       </NuxtLink>
-      <NuxtLink to="/me/1/transactions">
+      <NuxtLink to="/me/1/wallet">
         کیف‌پول
       </NuxtLink>
       <NuxtLink to="/me/1/favorites">
         علاقمندی‌ها
       </NuxtLink>
-      <NuxtLink to="/me/1/contracts">
+      <NuxtLink to="/me/1/ads">
         آگهی‌ها
       </NuxtLink>
     </nav>
