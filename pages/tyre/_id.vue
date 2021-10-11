@@ -1,9 +1,9 @@
 <template>
   <section>
     <!-- Back to store -->
-    <div class="w-full relative block text-left md:mb-28 pt-6 px-3 z-50">
+    <div class="w-full relative block text-left md:mb-18 pt-6 px-3 z-50">
       <NuxtLink to="/">
-        <i class="fas fa-arrow-left text-primary text-2xl" />
+        <i class="far fa-arrow-left text-primary text-2xl" />
       </NuxtLink>
     </div>
     <!-- Good Brief -->
@@ -25,9 +25,9 @@
 
     <!-- Call to action -->
     <div class="w-full mb-2 px-3">
-      <Button v-if="expired_at === null && id !== 0" text="مشاهده تایر با پروفایل کاربری" classes="bg-red-400" icon="fal fa-user-plus" />
-      <Button v-else-if="id !== 0" text="فعالسازی اشتراک فروشگاه" classes="bg-primary" icon="fal fa-cash-register" />
-      <Button v-else text="ثبت آگهی برای این تایر" classes="bg-yellow-500" icon="fal fa-tire" />
+      <Button v-if="expired_at === null && id !== 0" text="مشاهده تایر با پروفایل کاربری" template="red" icon="fal fa-user-plus" />
+      <Button v-else-if="id !== 0" text="فعالسازی اشتراک فروشگاه" icon="fal fa-cash-register" />
+      <Button v-else text="ثبت آگهی برای این تایر" template="yellow" icon="fal fa-tire" />
     </div>
 
     <!-- Menu -->

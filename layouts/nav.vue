@@ -1,16 +1,16 @@
 <template>
   <div id="logged-container">
     <HeadProfileLayout v-if="$route.fullPath.includes('/me')" />
-    <Nuxt />
+    <Nuxt id="nav-body" />
     <footer>
       <div class="grid grid-cols-5 grid-rows-1 gap-1 px-4 py-4">
         <div class="text-center" :class="{'col-span-2': $route.fullPath === '/', 'col-span-3': $route.fullPath.includes('/me')}" @click="catShow = true">
           <!-- Choose Cars -->
           <Badge v-if="$route.fullPath === '/'" id="category" :text="catChosen.name" :icon="`${catChosen.icon} text-xl xs:text-2xl`" icon-position="before" />
           <div v-else class="w-full">
-            <Button v-if="isUserValidated && !hasUserMembership" text="خرید اشتراک کاربری" classes="bg-indigo-600" icon="fal fa-users" icon-position="before" />
-            <Button v-else-if="!isUserValidated" text="تکمیل مشخصات" classes="bg-red-500" icon="fal fa-address-card" icon-position="before" />
-            <Button v-else text="ثبت آگهی" classes="bg-primary" icon="fal fa-ad" icon-position="before" />
+            <Button v-if="isUserValidated && !hasUserMembership" text="خرید اشتراک کاربری" template="indigo" icon="fal fa-users" icon-position="before" />
+            <Button v-else-if="!isUserValidated" text="تکمیل مشخصات" template="red" icon="fal fa-address-card" icon-position="before" />
+            <Button v-else text="ثبت آگهی" icon="fal fa-ad" icon-position="before" />
           </div>
         </div>
 
