@@ -29,6 +29,13 @@
         top: 2px;
     }
 
+    .search-box {
+        @apply w-full rounded-lg text-sm text-gray-600 sans-number mb-4 p-2;
+        outline: none;
+        border: none;
+        background-color: #f7f7f7;
+    }
+
     .select-zone {
         @apply w-full bg-white mx-auto inset-0 absolute;
     

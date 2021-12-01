@@ -1,0 +1,62 @@
+#tyre-ads-tab,
+#my-ads-tab {
+    @apply text-center;
+
+		#header {
+			@apply py-8;
+
+			> p {
+				@apply sans-medium text-lg;
+			}
+
+			> span {
+				@apply sans-number text-gray-500;
+			}
+
+			.gray-filter {
+				filter: grayscale(100);
+			}
+		}
+
+		#ads {
+			@apply px-2 xs:px-3 pb-5;
+
+			.card-list {
+				@apply box-shadow rounded-lg my-5 overflow-hidden p-3;
+
+				.title {
+					@apply flex justify-between text-right;
+
+					* {
+						@apply sans-number;
+					}
+
+					.cost {
+						> p {
+							@apply text-lg;
+						}
+
+						> span {
+							@apply text-sm text-gray-500;
+						}
+					}
+
+					.date {
+						@apply text-gray-400 text-xs mt-1;
+
+						i {
+							font-family: inherit !important;
+						}
+					}
+				}
+
+				.badges {
+					@apply text-right my-6;
+				}
+
+				.user {
+					@apply flex justify-between mt-4;
+				}
+			}
+		}
+}

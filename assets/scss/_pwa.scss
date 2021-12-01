@@ -1,11 +1,20 @@
 body {
     background-color: $empty_zone;
+    transition: .5s all ease-in;
 }
 #pwa, .fixed {
     @apply w-full xl:w-1/4 mx-auto;
-    
 }
 #pwa {
     @apply bg-white;
     min-height: 100vh;
+    transition: .5s all ease-in;
+}
+.body-preview {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+.pwa-preview {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
 }

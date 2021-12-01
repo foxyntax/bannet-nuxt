@@ -1,12 +1,16 @@
 // Main Colors
 $primary_color: #086dc0;
 $danger_color: #f82d71;
+$indego_color: rgb(79, 70, 229);
 $default_color: #2f3436;
 $gray_color: #f5f5f5;
 $empty_zone: #24292c;
 
 .text-primary {
     color: $primary_color;
+}
+.text-danger {
+    color: $danger_color;
 }
 .text-primary-darken {
     color: darken($primary_color, 35%);

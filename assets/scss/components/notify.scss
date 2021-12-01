@@ -1,0 +1,27 @@
+.vue-notification-group {
+  @apply w-full left-0 right-0 p-1 #{!important};
+}
+
+.vue-notification {
+    @apply w-full text-right rounded-lg;
+    border-left: none !important;
+    border-right: 5px solid #187FE7;
+    margin-left: 0;
+    margin-right: 0;
+
+    .notification-title {
+      @apply mb-2 text-sm;
+    }
+
+    &.warn {
+        border-color: #f48a06;
+      }
+     
+    &.error {
+      border-color: #B82E24;
+    }
+    
+    &.success {
+      border-color: #42A85F;
+    }
+}

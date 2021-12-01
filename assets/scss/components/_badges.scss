@@ -17,12 +17,16 @@
 }
 
 .badge-primary {
-    background: transparentize($primary_color, 0.9);
+    background: transparentize($primary_color, 0.8);
     color: lighten($primary_color, 10%);
 }
 .badge-danger {
     background: transparentize($danger_color, 0.5);
     color: lighten($danger_color, 10%);
+}
+.badge-indego {
+    background: transparentize($indego_color, 0.8);
+    color: lighten($indego_color, 1%);
 }
 .badge-default {
     background: transparentize($default_color, 0.5);
