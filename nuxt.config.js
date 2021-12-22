@@ -11,9 +11,20 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  // env property
+  env: {
+    // assets: 'http://localhost/bannet-sv/uploads/'
+    assets: 'https://sv.banett.ir/uploads/'
+  },
+
+  // Global Route Settings
+  router: {
+    middleware: ['preview', 'membershipCheck', 'auth']
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Bannet',
+    title: 'Banett',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' },
@@ -33,7 +44,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/vue-hammer.js',
-    '~/plugins/apexchart.js'
+    '~/plugins/notify.js',
+    '~/plugins/cookie.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -81,8 +93,8 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    // baseURL: 'https://sv.banett.ir/api/',
-    baseURL: 'http://localhost/bannet-sv/api/',
+    // baseURL: 'http://localhost/bannet-sv/api/',
+    baseURL: 'https://sv.banett.ir/api/',
 		headers: {
 			'Content-Type': 'application/json',
 			'Access-Control-Allow-Origin': '*'
