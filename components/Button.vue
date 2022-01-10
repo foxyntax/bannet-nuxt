@@ -1,5 +1,5 @@
 <template>
-  <button class="bannet-btn" :class="classes + ' ' + getSize + ' ' + getTemplate" @click="click">
+  <button :type="type" class="bannet-btn" :class="classes + ' ' + getSize + ' ' + getTemplate" :disabled="disabled || loading" @click="emitter()">
     <span v-show="!loading">
       <i v-if="iconPosition === 'before' && icon !== ''" :class="icon" class="ml-1" />
       {{ text }}
@@ -15,6 +15,11 @@
 <script>
 export default {
   props: {
+    type: {
+      required: false,
+      type: String,
+      default: 'button'
+    },
     size: {
       required: false,
       type: String,
@@ -39,6 +44,11 @@ export default {
       type: Boolean,
       default: false
     },
+    disabled: {
+      required: false,
+      type: Boolean,
+      default: false
+    },
     icon: {
       required: false,
       type: String,
@@ -48,11 +58,6 @@ export default {
         required: false,
         type: String,
         default: 'before'
-    },
-    click: {
-        required: false,
-        type: Function,
-        default: () => null
     }
   },
   computed: {
@@ -78,6 +83,13 @@ export default {
           return 'temp-yellow'
         default:
           return 'temp-default'
+      }
+    }
+  },
+  methods: {
+    emitter () {
+      if (!this.disabled && !this.loading) {
+        this.$emit('clicked')
       }
     }
   }
