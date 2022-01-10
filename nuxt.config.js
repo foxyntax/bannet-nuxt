@@ -19,7 +19,7 @@ export default {
 
   // Global Route Settings
   router: {
-    middleware: ['preview', 'membershipCheck', 'auth']
+    middleware: ['membershipCheck', 'auth']
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
