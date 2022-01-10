@@ -2,6 +2,7 @@
   <p
     class="badge sans-number"
     :class="`${classes} ${getTypeClass} ${getColorClass} ${getFontStyle}`"
+    @click="$emit('clicked')"
   >
     <i v-show="iconPosition === 'before'" :class="icon + ' ' + getTextColor()" class="ml-1" />
     <span :class="getTextColor()"> {{ text }} </span>
@@ -13,8 +14,9 @@
 export default {
   props: {
     text: {
-      required: true,
-      type: [String, Number]
+      required: false,
+      type: [String, Number],
+      default: ''
     },
     type: {
         required: false,
@@ -64,6 +66,8 @@ export default {
         return 'badge-danger'
       } else if (this.color === 'primary') {
         return 'badge-primary'
+      } else if (this.color === 'indego') {
+        return 'badge-indego'
       } else {
         return 'bg-' + this.color + '-200'
       }
