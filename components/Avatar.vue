@@ -1,7 +1,9 @@
 <template>
-  <div id="avatar-zone" :class="{'rounded-full': (radius === 'full')}" :style="`width: ${size}; height: ${size}`">
-    <img :src="src" :alt="alt">
-    <i :class="icon" />
+  <div class="overflow-hidden">
+    <div id="avatar-zone" :class="{'rounded-full': (radius === 'full')}" :style="`width: ${size}; height: ${size}`">
+      <img v-show="src !== null && src !== ''" :src="getSrc" :alt="alt">
+      <i v-show="src === null || src === ''" :class="icon" />
+    </div>
   </div>
 </template>
 
@@ -14,8 +16,9 @@ export default {
 			default: '45px'
 		},
     src: {
-      required: true,
-      type: String
+      required: false,
+      type: [String, Boolean],
+      default: ''
     },
     alt: {
         required: false,
@@ -33,6 +36,15 @@ export default {
       default: 'fas fa-user fa-2x top-1'
     }
   },
+  computed: {
+    getSrc () {
+      if (this.src === '' || this.src === false) {
+        return ''
+      } else {
+        return process.env.assets + this.src
+      }
+    }
+  },
 	mounted () {
 		if (this.radius !== 'full') {
 			document.getElementById('avatar-zone').style.borderRadius = this.radius + 'px'
@@ -44,9 +56,13 @@ export default {
 <style lang="scss">
 #avatar-zone {
     @apply relative text-center align-middle bg-gray-100 overflow-hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 		i {
-			@apply relative text-gray-300 z-0;
+			@apply text-gray-300;
+      flex-shrink: 0;
 		}
 
 		img {
